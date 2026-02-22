@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="הצהרת נגישות - SHINE שירותי מדידה, שרטוט והדמיית 3D">
+    <title>הצהרת נגישות | SHINE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .statement-page {
+            background-color: var(--bg-white);
+            padding: 70px 0 80px;
+        }
+
+        .statement-inner {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blue);
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            transition: gap 0.2s ease, color 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+            color: var(--red);
+        }
+
+        .statement-inner h1 {
+            font-size: calc(2.4rem * var(--font-size-scale));
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .statement-intro {
+            font-size: calc(1.05rem * var(--font-size-scale));
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .statement-inner h2 {
+            font-size: calc(1.35rem * var(--font-size-scale));
+            color: var(--text-dark);
+            margin-top: 2.5rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .statement-inner h2::before {
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background-color: var(--red);
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .statement-inner h3 {
+            font-size: calc(1.05rem * var(--font-size-scale));
+            color: var(--blue);
+            margin-top: 1.5rem;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+
+        .statement-inner p {
+            color: var(--text-medium);
+            font-size: calc(0.97rem * var(--font-size-scale));
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .statement-inner ul {
+            margin-right: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .statement-inner li {
+            color: var(--text-medium);
+            font-size: calc(0.97rem * var(--font-size-scale));
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .statement-inner strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .contact-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border);
+            border-right: 3px solid var(--red);
+            border-radius: 6px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-box h3 {
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            font-size: calc(1.05rem * var(--font-size-scale));
+        }
+
+        .contact-box a {
+            color: var(--blue);
+            font-weight: 500;
+        }
+
+        .contact-box a:hover { color: var(--red); }
+
+        .update-date {
+            font-size: calc(0.85rem * var(--font-size-scale));
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- תפריט נגישות -->
+    <div id="accessibility-menu" class="accessibility-menu" role="region" aria-label="תפריט נגישות">
+        <button id="accessibility-toggle" class="accessibility-toggle" aria-label="פתח תפריט נגישות" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+            <span>נגישות</span>
+        </button>
+        <div id="accessibility-options" class="accessibility-options" aria-hidden="true">
+            <h2>אפשרויות נגישות</h2>
+            <button class="accessibility-btn" data-action="increase-font" aria-label="הגדל גופן">
+                <span class="icon">A+</span><span>הגדל גופן</span>
+            </button>
+            <button class="accessibility-btn" data-action="decrease-font" aria-label="הקטן גופן">
+                <span class="icon">A-</span><span>הקטן גופן</span>
+            </button>
+            <button class="accessibility-btn" data-action="high-contrast" aria-label="ניגודיות גבוהה">
+                <span class="icon">◐</span><span>ניגודיות גבוהה</span>
+            </button>
+            <button class="accessibility-btn" data-action="reset" aria-label="אפס הגדרות">
+                <span class="icon">↻</span><span>אפס הגדרות</span>
+            </button>
+            <a href="accessibility-statement.html" class="accessibility-link" aria-current="page">הצהרת נגישות</a>
+        </div>
+    </div>
+
+    <!-- כפתור וואטסאפ צף -->
+    <a href="https://wa.me/972523386911?text=היי%20SHINE,%20אשמח%20לשמוע%20עוד%20על%20השירותים%20שלכם"
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="פנה אלינו בוואטסאפ">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.824.738 5.482 2.028 7.784L.067 31.848l8.292-2.176A15.923 15.923 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.444 0-4.768-.662-6.756-1.812l-.484-.288-5.024 1.32 1.34-4.896-.316-.5A13.242 13.242 0 012.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
+            <path d="M23.348 19.472c-.388-.196-2.3-1.136-2.656-1.264-.356-.132-.616-.196-.876.196-.26.388-1.008 1.264-1.236 1.524-.228.26-.456.292-.844.096-.388-.196-1.64-.604-3.124-1.928-1.156-1.032-1.936-2.308-2.164-2.696-.228-.388-.024-.6.172-.792.176-.176.388-.456.584-.684.196-.228.26-.388.388-.648.132-.26.068-.488-.032-.684-.1-.196-.876-2.112-1.2-2.892-.316-.76-.636-.656-.876-.668-.228-.012-.488-.012-.748-.012s-.684.096-1.04.488c-.356.388-1.36 1.328-1.36 3.244s1.392 3.764 1.588 4.024c.196.26 2.748 4.196 6.656 5.884.932.404 1.66.644 2.228.824.936.296 1.788.256 2.46.156.752-.112 2.3-.94 2.624-1.848.324-.908.324-1.688.228-1.848-.096-.16-.356-.26-.744-.456z"/>
+        </svg>
+    </a>
+
+    <!-- כפתור טלפון צף -->
+    <a href="tel:+972523386911" class="phone-float" aria-label="התקשר אלינו">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+            <path d="M25.36 20.12l-3.52-1.52c-.48-.2-1.04-.08-1.4.32l-1.56 1.56c-2.84-1.44-5.16-3.76-6.6-6.6l1.56-1.56c.4-.36.52-.92.32-1.4l-1.52-3.52c-.24-.56-.84-.88-1.44-.76l-3.2.64c-.6.12-1.04.64-1.04 1.24C6.96 18.28 13.72 25.04 22.48 25.04c.6 0 1.12-.44 1.24-1.04l.64-3.2c.12-.6-.2-1.2-.76-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- תפריט ניווט -->
+    <nav class="navbar" role="navigation" aria-label="תפריט ראשי">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo" aria-label="SHINE - דף הבית">
+                    <img src="images/logo.png" alt="SHINE - מדידה שרטוט הדמייה" class="logo-image">
+                </a>
+                <button class="mobile-menu-toggle" aria-label="פתח תפריט" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="index.html" role="menuitem">דף הבית</a></li>
+                    <li role="none"><a href="index.html#services" role="menuitem">שירותים</a></li>
+                    <li role="none"><a href="index.html#portfolio" role="menuitem">פורטפוליו</a></li>
+                    <li role="none"><a href="testimonials.html" role="menuitem">המלצות</a></li>
+                    <li role="none"><a href="index.html#contact" role="menuitem" class="nav-contact-link">צור קשר</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- תוכן ההצהרה -->
+    <main class="statement-page" role="main">
+        <div class="container">
+            <div class="statement-inner">
+
+                <a href="index.html" class="back-link">
+                    <span>←</span>
+                    <span>חזרה לדף הבית</span>
+                </a>
+
+                <h1>הצהרת נגישות</h1>
+                <p class="statement-intro">
+                    <strong>SHINE</strong> — שירותי מדידה, שרטוט והדמיית 3D — מחויבת להנגשת האתר לכלל האוכלוסייה,
+                    לרבות אנשים עם מוגבלויות. אנו פועלים לשיפור רציף של נגישות האתר ועמידתו בתקנים הנדרשים.
+                </p>
+
+                <h2>מהי נגישות אתרי אינטרנט?</h2>
+                <p>
+                    אתר אינטרנט נגיש הוא אתר המאפשר לאנשים עם מוגבלות לגלוש בו באותה רמה של יעילות והנאה כמו גולשים אחרים,
+                    באמצעות טכנולוגיות מסייעות ועיצוב אתר מתאים.
+                </p>
+
+                <h2>התאמות הנגישות באתר</h2>
+                <p>האתר הותאם בהתאם לתקן הישראלי (ת"י 5568) ולהנחיות WCAG 2.1 ברמה AA. ההתאמות כוללות, בין היתר:</p>
+
+                <h3>שימוש במקלדת</h3>
+                <ul>
+                    <li>ניתן לנווט באתר באמצעות מקלדת בלבד, ללא צורך בעכבר</li>
+                    <li>כל הפונקציות זמינות באמצעות מקלדת</li>
+                    <li>סדר הטאבים (Tab) באתר הוא לוגי ועוקב אחר מבנה הדף</li>
+                    <li>אלמנטים אינטראקטיביים (כפתורים, קישורים) ניתנים למיקוד ברור</li>
+                </ul>
+
+                <h3>תמיכה בטכנולוגיות מסייעות</h3>
+                <ul>
+                    <li>האתר תומך בקוראי מסך מובילים כגון NVDA, JAWS ו-VoiceOver</li>
+                    <li>השימוש בתגיות ARIA מאפשר הבנה נכונה של המבנה והתוכן</li>
+                    <li>כל התמונות כוללות טקסט חלופי (Alt Text) תיאורי</li>
+                    <li>כותרות מסומנות בצורה היררכית ברורה (H1, H2, H3...)</li>
+                </ul>
+
+                <h3>תפריט נגישות</h3>
+                <p>האתר כולל תפריט נגישות ייעודי המאפשר:</p>
+                <ul>
+                    <li><strong>הגדלת טקסט</strong> — הגדלת גודל הגופן באתר</li>
+                    <li><strong>הקטנת טקסט</strong> — הקטנת גודל הגופן באתר</li>
+                    <li><strong>ניגודיות גבוהה</strong> — החלפת צבעי האתר לניגודיות מקסימלית</li>
+                    <li><strong>איפוס הגדרות</strong> — החזרת כל ההגדרות למצב ברירת המחדל</li>
+                </ul>
+                <p>ההגדרות נשמרות באופן אוטומטי ונטענות בביקור הבא באתר.</p>
+
+                <h3>צבעים וניגודיות</h3>
+                <ul>
+                    <li>ניגודיות צבעים בין הטקסט לרקע עומדת בתקן הנדרש</li>
+                    <li>האתר אינו מסתמך על צבע בלבד להעברת מידע</li>
+                    <li>אפשרות להחלפה למצב ניגודיות גבוהה</li>
+                </ul>
+
+                <h3>תמיכה בעברית וכיווניות RTL</h3>
+                <ul>
+                    <li>האתר כולו בעברית עם תמיכה מלאה בכיווניות מימין לשמאל (RTL)</li>
+                    <li>טקסטים מיושרים בצורה נכונה</li>
+                    <li>כל רכיבי האתר מותאמים לגלישה בעברית</li>
+                </ul>
+
+                <h3>עיצוב רספונסיבי</h3>
+                <ul>
+                    <li>האתר מותאם לצפייה במגוון מכשירים — מחשב, טאבלט וסמארטפון</li>
+                    <li>התוכן מתארגן מחדש באופן אוטומטי בהתאם לגודל המסך</li>
+                    <li>כל הפונקציות זמינות גם בגרסה הניידת</li>
+                </ul>
+
+                <h2>דפדפנים ותאימות</h2>
+                <p>האתר נבדק ונמצא תקין בדפדפנים הבאים:</p>
+                <ul>
+                    <li>Google Chrome (גרסאות עדכניות)</li>
+                    <li>Mozilla Firefox (גרסאות עדכניות)</li>
+                    <li>Safari (גרסאות עדכניות)</li>
+                    <li>Microsoft Edge (גרסאות עדכניות)</li>
+                </ul>
+
+                <h2>מגבלות ידועות</h2>
+                <p>
+                    למרות המאמצים שלנו להנגיש את כל העמודים באתר, ייתכן שחלק מהתכנים טרם הונגשו במלואם.
+                    אנו ממשיכים במאמצים לשפר את נגישות האתר לאורך זמן.
+                </p>
+
+                <div class="contact-box">
+                    <h3>נתקלתם בבעיית נגישות באתר?</h3>
+                    <p>
+                        אנו עושים כל שביכולתנו כדי לשמור על תקני נגישות. אם נתקלתם בבעיה, נשמח אם תיצרו איתנו קשר
+                        ונעשה כמיטב יכולתנו לטפל בה בהקדם.
+                    </p>
+                    <p><strong>דרכי יצירת קשר:</strong></p>
+                    <ul>
+                        <li>טלפון: <a href="tel:+972523386911" dir="ltr">052-338-6911</a></li>
+                        <li>אימייל: <a href="mailto:SHINE.measur@gmail.com">SHINE.measur@gmail.com</a></li>
+                        <li>וואטסאפ: <a href="https://wa.me/972523386911" target="_blank" rel="noopener noreferrer">שלחו הודעה</a></li>
+                    </ul>
+                </div>
+
+                <h2>רכז נגישות</h2>
+                <p>
+                    <strong>שם:</strong> שני אקוקה — SHINE<br>
+                    <strong>טלפון:</strong> <a href="tel:+972523386911" dir="ltr">052-338-6911</a><br>
+                    <strong>אימייל:</strong> <a href="mailto:SHINE.measur@gmail.com">SHINE.measur@gmail.com</a>
+                </p>
+
+                <h2>פיקוח ואכיפה</h2>
+                <p>
+                    האחראי על אכיפת תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013,
+                    הוא הנציב לשוויון זכויות אנשים עם מוגבלות במשרד המשפטים.
+                </p>
+                <p>
+                    <strong>משרד המשפטים — הנציבות לשוויון זכויות אנשים עם מוגבלות:</strong><br>
+                    טלפון: 02-5318558<br>
+                    <a href="https://www.gov.il/he/departments/the_commissioner_for_equal_rights_of_persons_with_disabilities"
+                       target="_blank" rel="noopener noreferrer">אתר הנציבות לשוויון זכויות</a>
+                </p>
+
+                <p class="update-date">הצהרת נגישות זו עודכנה לאחרונה: ינואר 2026</p>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">SHINE</span>
+                    <p class="footer-desc">מייצרים פתרונות ויזואלים<br>שירותי מדידה · שרטוט · הדמייה</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="עמוד אינסטגרם" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <circle cx="12" cy="12" r="4.5"/>
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="עמוד פייסבוק" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>ניווט מהיר</h3>
+                    <ul>
+                        <li><a href="index.html">דף הבית</a></li>
+                        <li><a href="index.html#services">שירותים</a></li>
+                        <li><a href="index.html#portfolio">פורטפוליו</a></li>
+                        <li><a href="testimonials.html">המלצות</a></li>
+                        <li><a href="index.html#contact">צור קשר</a></li>
+                        <li><a href="accessibility-statement.html" aria-current="page">הצהרת נגישות</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>פרטי קשר</h3>
+                    <p><a href="tel:+972523386911" dir="ltr">052-338-6911</a></p>
+                    <p><a href="mailto:SHINE.measur@gmail.com">SHINE.measur@gmail.com</a></p>
+                    <p><a href="https://wa.me/972523386911" target="_blank" rel="noopener noreferrer">וואטסאפ</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SHINE · כל הזכויות שמורות</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

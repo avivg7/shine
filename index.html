@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SHINE - שירותי מדידה, שרטוט והדמיית 3D מקצועיים לאדריכלים, מעצבי פנים ומהנדסים">
+    <title>SHINE | מדידה · שרטוט · הדמייה</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- תפריט נגישות -->
+    <div id="accessibility-menu" class="accessibility-menu" role="region" aria-label="תפריט נגישות">
+        <button id="accessibility-toggle" class="accessibility-toggle" aria-label="פתח תפריט נגישות" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+            <span>נגישות</span>
+        </button>
+        <div id="accessibility-options" class="accessibility-options" aria-hidden="true">
+            <h2>אפשרויות נגישות</h2>
+            <button class="accessibility-btn" data-action="increase-font" aria-label="הגדל גופן">
+                <span class="icon">A+</span><span>הגדל גופן</span>
+            </button>
+            <button class="accessibility-btn" data-action="decrease-font" aria-label="הקטן גופן">
+                <span class="icon">A-</span><span>הקטן גופן</span>
+            </button>
+            <button class="accessibility-btn" data-action="high-contrast" aria-label="ניגודיות גבוהה">
+                <span class="icon">◐</span><span>ניגודיות גבוהה</span>
+            </button>
+            <button class="accessibility-btn" data-action="reset" aria-label="אפס הגדרות">
+                <span class="icon">↻</span><span>אפס הגדרות</span>
+            </button>
+            <a href="accessibility-statement.html" class="accessibility-link">הצהרת נגישות</a>
+        </div>
+    </div>
+
+    <!-- כפתור וואטסאפ צף -->
+    <a href="https://wa.me/972523386911?text=היי%20SHINE,%20אשמח%20לשמוע%20עוד%20על%20השירותים%20שלכם"
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="פנה אלינו בוואטסאפ">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.824.738 5.482 2.028 7.784L.067 31.848l8.292-2.176A15.923 15.923 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.444 0-4.768-.662-6.756-1.812l-.484-.288-5.024 1.32 1.34-4.896-.316-.5A13.242 13.242 0 012.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
+            <path d="M23.348 19.472c-.388-.196-2.3-1.136-2.656-1.264-.356-.132-.616-.196-.876.196-.26.388-1.008 1.264-1.236 1.524-.228.26-.456.292-.844.096-.388-.196-1.64-.604-3.124-1.928-1.156-1.032-1.936-2.308-2.164-2.696-.228-.388-.024-.6.172-.792.176-.176.388-.456.584-.684.196-.228.26-.388.388-.648.132-.26.068-.488-.032-.684-.1-.196-.876-2.112-1.2-2.892-.316-.76-.636-.656-.876-.668-.228-.012-.488-.012-.748-.012s-.684.096-1.04.488c-.356.388-1.36 1.328-1.36 3.244s1.392 3.764 1.588 4.024c.196.26 2.748 4.196 6.656 5.884.932.404 1.66.644 2.228.824.936.296 1.788.256 2.46.156.752-.112 2.3-.94 2.624-1.848.324-.908.324-1.688.228-1.848-.096-.16-.356-.26-.744-.456z"/>
+        </svg>
+    </a>
+
+    <!-- כפתור טלפון צף -->
+    <a href="tel:+972523386911" class="phone-float" aria-label="התקשר אלינו">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+            <path d="M25.36 20.12l-3.52-1.52c-.48-.2-1.04-.08-1.4.32l-1.56 1.56c-2.84-1.44-5.16-3.76-6.6-6.6l1.56-1.56c.4-.36.52-.92.32-1.4l-1.52-3.52c-.24-.56-.84-.88-1.44-.76l-3.2.64c-.6.12-1.04.64-1.04 1.24C6.96 18.28 13.72 25.04 22.48 25.04c.6 0 1.12-.44 1.24-1.04l.64-3.2c.12-.6-.2-1.2-.76-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- תפריט ניווט -->
+    <nav class="navbar" role="navigation" aria-label="תפריט ראשי">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo" aria-label="SHINE - דף הבית">
+                    <img src="images/logo.png" alt="SHINE - מדידה שרטוט הדמייה" class="logo-image">
+                </a>
+                <button class="mobile-menu-toggle" aria-label="פתח תפריט" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="#home" role="menuitem">דף הבית</a></li>
+                    <li role="none"><a href="#services" role="menuitem">שירותים</a></li>
+                    <li role="none"><a href="#portfolio" role="menuitem">פורטפוליו</a></li>
+                    <li role="none"><a href="testimonials.html" role="menuitem">המלצות</a></li>
+                    <li role="none"><a href="#contact" role="menuitem" class="nav-contact-link">צור קשר</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" role="banner">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <p class="hero-label">שירותי מדידה, שרטוט והדמייה</p>
+                    <h1 class="hero-title">SHINE</h1>
+                    <p class="hero-subtitle">מייצרים פתרונות ויזואלים</p>
+                    <p class="hero-line">שירותי מדידה והדמייה מקצועיים —</p>
+                    <p class="hero-tagline">הופכים את החלום למציאות ויזואלית</p>
+                    <div class="hero-cta-group">
+                        <a href="#contact" class="btn-primary">צור קשר עכשיו</a>
+                        <a href="#portfolio" class="btn-secondary">לפורטפוליו ←</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="images/profile_logo.png" alt="SHINE - שני אקוקה" class="hero-profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">מה אנחנו מציעים</span>
+                <h2 class="section-title">השירותים שלנו</h2>
+                <p class="section-subtitle">פתרונות מקצועיים לכל שלב בתכנון הפרויקט</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-in">
+                    <div class="service-icon red">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M3 5h2M3 8h2M3 11h2"/>
+                            <rect x="7" y="3" width="14" height="18" rx="1"/>
+                            <path d="M10 7h8M10 11h8M10 15h5" stroke-dasharray="1.5 1.5"/>
+                        </svg>
+                    </div>
+                    <h3>מדידה מקצועית</h3>
+                    <p>סיור בשטח ומדידה מדויקת של כל נכס. שימוש בציוד מתקדם לתוצאות אמינות ומדויקות — הבסיס לכל תכנון מוצלח.</p>
+                </div>
+                <div class="service-card animate-in">
+                    <div class="service-icon blue">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M12 19l7-7-7-7"/>
+                            <path d="M5 5l4 4-4 4"/>
+                            <rect x="2" y="3" width="20" height="18" rx="2" stroke-dasharray="2 1.5"/>
+                            <path d="M8 12h8"/>
+                        </svg>
+                    </div>
+                    <h3>שרטוט אדריכלי</h3>
+                    <p>הפקת שרטוטים אדריכליים מקצועיים ומדויקים על בסיס המדידות בשטח. תוכניות קומה, חזיתות וחתכים — לפי כל סטנדרט נדרש.</p>
+                </div>
+                <div class="service-card animate-in">
+                    <div class="service-icon red">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>הדמיית 3D וסיור וירטואלי</h3>
+                    <p>יצירת הדמיות תלת-ממדיות מרהיבות וסיורים וירטואליים אינטראקטיביים — מציגים את המבנה כפי שיראה במציאות, עוד לפני שמניחים אבן אחת.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">איך זה עובד</span>
+                <h2 class="section-title">שלושה שלבים פשוטים</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step animate-in">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>סריקה וסיור בשטח</h3>
+                        <p>מגיעים לנכס, סורקים את כל תא השטח בציוד מדידה מדויק ומתעדים כל פרט.</p>
+                    </div>
+                </div>
+                <div class="process-connector" aria-hidden="true">
+                    <svg width="60" height="2" viewBox="0 0 60 2">
+                        <line x1="0" y1="1" x2="60" y2="1" stroke="#e51722" stroke-width="1.5" stroke-dasharray="6,4"/>
+                    </svg>
+                </div>
+                <div class="process-step animate-in">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>הפקת סיור וירטואלי</h3>
+                        <p>על בסיס הנתונים שנאספו, מפיקים סיור וירטואלי מלא המאפשר חוויה אינטראקטיבית של המרחב.</p>
+                    </div>
+                </div>
+                <div class="process-connector" aria-hidden="true">
+                    <svg width="60" height="2" viewBox="0 0 60 2">
+                        <line x1="0" y1="1" x2="60" y2="1" stroke="#e51722" stroke-width="1.5" stroke-dasharray="6,4"/>
+                    </svg>
+                </div>
+                <div class="process-step animate-in">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>שרטוט אדריכלי</h3>
+                        <p>מפיקים שרטוטים אדריכליים מפורטים ומדויקים — מוכנים לשימוש מיידי בכל שלב תכנוני.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="advantages-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">למה SHINE</span>
+                <h2 class="section-title">היתרונות שלנו</h2>
+                <p class="section-subtitle">כל תכנון מבנה מתחיל במדידה עדכנית ושרטוט — אנחנו עושים זאת ברמה הגבוהה ביותר</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card animate-in">
+                    <div class="advantage-accent red"></div>
+                    <div class="advantage-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e51722" stroke-width="1.5" aria-hidden="true">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>שירות אישי ואמין</h3>
+                    <p>יחס אישי, מקצועי ואדיב לכל לקוח. מענה מיידי וליווי צמוד לאורך כל הפרויקט — מהמדידה הראשונה עד המסירה הסופית.</p>
+                </div>
+                <div class="advantage-card animate-in">
+                    <div class="advantage-accent blue"></div>
+                    <div class="advantage-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="1.5" aria-hidden="true">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                        </svg>
+                    </div>
+                    <h3>מוצר מדויק</h3>
+                    <p>שימוש בטכנולוגיות מדידה מתקדמות המבטיחות דיוק מירבי. כל מידה, כל קו — מחושב ומאומת ביסודיות לפני המסירה.</p>
+                </div>
+                <div class="advantage-card animate-in">
+                    <div class="advantage-accent red"></div>
+                    <div class="advantage-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e51722" stroke-width="1.5" aria-hidden="true">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>פתרון ייחודי</h3>
+                    <p>שילוב ייחודי של מדידה, שרטוט והדמיית 3D תחת קורת גג אחת. חיסכון בזמן, בכסף ובתיאום בין גורמים — פתרון שלם במקום אחד.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">העבודות שלנו</span>
+                <h2 class="section-title">פורטפוליו</h2>
+                <p class="section-subtitle">דוגמאות מפרויקטים שביצענו</p>
+            </div>
+            <div class="portfolio-grid">
+
+                <div class="portfolio-item animate-in">
+                    <div class="portfolio-visual">
+                        <!-- Floor Plan SVG -->
+                        <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="280" height="200" fill="#f9fafb"/>
+                            <defs><pattern id="g1" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0L0 0 0 14" fill="none" stroke="#1B3A6B" stroke-width="0.2" opacity="0.4"/></pattern></defs>
+                            <rect width="280" height="200" fill="url(#g1)"/>
+                            <!-- Outer walls -->
+                            <rect x="20" y="20" width="240" height="160" stroke="#111827" stroke-width="2" fill="none"/>
+                            <!-- Interior walls -->
+                            <line x1="130" y1="20" x2="130" y2="120" stroke="#111827" stroke-width="1.5"/>
+                            <line x1="130" y1="120" x2="260" y2="120" stroke="#111827" stroke-width="1.5"/>
+                            <line x1="20" y1="100" x2="100" y2="100" stroke="#111827" stroke-width="1.5"/>
+                            <!-- Door openings -->
+                            <path d="M100 100 Q100 80 120 80" stroke="#e51722" stroke-width="0.8" stroke-dasharray="3,2" fill="none"/>
+                            <path d="M130 120 Q150 120 150 100" stroke="#e51722" stroke-width="0.8" stroke-dasharray="3,2" fill="none"/>
+                            <!-- Window marks -->
+                            <line x1="60" y1="20" x2="90" y2="20" stroke="#1B3A6B" stroke-width="3"/>
+                            <line x1="170" y1="20" x2="210" y2="20" stroke="#1B3A6B" stroke-width="3"/>
+                            <line x1="20" y1="50" x2="20" y2="80" stroke="#1B3A6B" stroke-width="3"/>
+                            <!-- Dimension lines -->
+                            <line x1="20" y1="185" x2="260" y2="185" stroke="#1B3A6B" stroke-width="0.6" stroke-dasharray="5,3"/>
+                            <line x1="20" y1="182" x2="20" y2="188" stroke="#1B3A6B" stroke-width="1"/>
+                            <line x1="260" y1="182" x2="260" y2="188" stroke="#1B3A6B" stroke-width="1"/>
+                            <text x="140" y="196" text-anchor="middle" font-size="8" fill="#1B3A6B" font-family="Heebo">12.00 מ׳</text>
+                        </svg>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">תוכנית קומה</span>
+                        <h3>דירת 4 חדרים — תל אביב</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-in">
+                    <div class="portfolio-visual">
+                        <!-- Building Elevation SVG -->
+                        <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="280" height="200" fill="#f9fafb"/>
+                            <defs><pattern id="g2" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0L0 0 0 14" fill="none" stroke="#1B3A6B" stroke-width="0.2" opacity="0.4"/></pattern></defs>
+                            <rect width="280" height="200" fill="url(#g2)"/>
+                            <!-- Foundation -->
+                            <line x1="20" y1="165" x2="260" y2="165" stroke="#111827" stroke-width="2.5"/>
+                            <!-- Building -->
+                            <rect x="50" y="60" width="180" height="105" stroke="#111827" stroke-width="1.5" fill="none"/>
+                            <!-- Roof -->
+                            <polygon points="30,60 140,15 250,60" stroke="#111827" stroke-width="1.5" fill="none"/>
+                            <!-- Windows -->
+                            <rect x="65" y="85" width="45" height="40" stroke="#111827" stroke-width="1" fill="rgba(100,130,200,0.08)"/>
+                            <line x1="87" y1="85" x2="87" y2="125" stroke="#111827" stroke-width="0.5"/>
+                            <rect x="170" y="85" width="45" height="40" stroke="#111827" stroke-width="1" fill="rgba(100,130,200,0.08)"/>
+                            <line x1="192" y1="85" x2="192" y2="125" stroke="#111827" stroke-width="0.5"/>
+                            <!-- Door -->
+                            <rect x="113" y="128" width="55" height="37" stroke="#111827" stroke-width="1" fill="none"/>
+                            <!-- Dimension line -->
+                            <line x1="265" y1="60" x2="265" y2="165" stroke="#e51722" stroke-width="0.6" stroke-dasharray="5,3"/>
+                            <line x1="262" y1="60" x2="268" y2="60" stroke="#e51722" stroke-width="1"/>
+                            <line x1="262" y1="165" x2="268" y2="165" stroke="#e51722" stroke-width="1"/>
+                            <text x="272" y="117" text-anchor="start" font-size="8" fill="#e51722" font-family="Heebo">5.25 מ׳</text>
+                        </svg>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">חזית בניין</span>
+                        <h3>בניין מגורים — רמת גן</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-in">
+                    <div class="portfolio-visual">
+                        <!-- 3D Wireframe SVG -->
+                        <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="280" height="200" fill="#0f172a"/>
+                            <defs><pattern id="g3" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0L0 0 0 14" fill="none" stroke="#1B3A6B" stroke-width="0.4" opacity="0.6"/></pattern></defs>
+                            <rect width="280" height="200" fill="url(#g3)" opacity="0.5"/>
+                            <!-- 3D Building wireframe -->
+                            <!-- Front face -->
+                            <rect x="60" y="80" width="120" height="90" stroke="#e51722" stroke-width="1" fill="none" opacity="0.9"/>
+                            <!-- Top face -->
+                            <polygon points="60,80 100,50 220,50 180,80" stroke="#1B3A6B" stroke-width="1" fill="none" opacity="0.9"/>
+                            <!-- Side face -->
+                            <polygon points="180,80 220,50 220,140 180,170" stroke="#6B90B3" stroke-width="1" fill="none" opacity="0.9"/>
+                            <!-- Roof lines -->
+                            <polygon points="50,80 120,40 190,40 180,80" stroke="#e51722" stroke-width="1" fill="none" stroke-dasharray="4,2" opacity="0.7"/>
+                            <!-- Windows 3D -->
+                            <rect x="70" y="95" width="35" height="30" stroke="#1B3A6B" stroke-width="0.8" fill="rgba(100,140,200,0.1)" opacity="0.8"/>
+                            <rect x="120" y="95" width="35" height="30" stroke="#1B3A6B" stroke-width="0.8" fill="rgba(100,140,200,0.1)" opacity="0.8"/>
+                            <!-- Corresponding back windows -->
+                            <rect x="195" y="65" width="20" height="22" stroke="#6B90B3" stroke-width="0.6" fill="none" opacity="0.6"/>
+                            <!-- Corner dots -->
+                            <circle cx="60" cy="80" r="2" fill="#e51722"/>
+                            <circle cx="180" cy="80" r="2" fill="#e51722"/>
+                            <circle cx="100" cy="50" r="2" fill="#1B3A6B"/>
+                            <circle cx="220" cy="50" r="2" fill="#1B3A6B"/>
+                        </svg>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag portfolio-tag-dark">הדמיית 3D</span>
+                        <h3>וילה פרטית — הרצליה</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-in">
+                    <div class="portfolio-visual">
+                        <!-- Interior Floor Plan SVG -->
+                        <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="280" height="200" fill="#f9fafb"/>
+                            <defs><pattern id="g4" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0L0 0 0 14" fill="none" stroke="#1B3A6B" stroke-width="0.2" opacity="0.4"/></pattern></defs>
+                            <rect width="280" height="200" fill="url(#g4)"/>
+                            <!-- Outer walls -->
+                            <rect x="15" y="15" width="250" height="170" stroke="#111827" stroke-width="2" fill="none"/>
+                            <!-- Interior divisions -->
+                            <line x1="120" y1="15" x2="120" y2="100" stroke="#111827" stroke-width="1.5"/>
+                            <line x1="15" y1="100" x2="200" y2="100" stroke="#111827" stroke-width="1.5"/>
+                            <line x1="200" y1="15" x2="200" y2="185" stroke="#111827" stroke-width="1.5"/>
+                            <!-- Furniture (simplified) -->
+                            <rect x="130" y="25" width="60" height="40" stroke="#6B7280" stroke-width="0.8" fill="rgba(107,114,128,0.1)"/>
+                            <text x="160" y="49" text-anchor="middle" font-size="7" fill="#6B7280" font-family="Heebo">סלון</text>
+                            <rect x="25" y="25" width="80" height="65" stroke="#6B7280" stroke-width="0.8" fill="rgba(107,114,128,0.1)"/>
+                            <text x="65" y="61" text-anchor="middle" font-size="7" fill="#6B7280" font-family="Heebo">חדר שינה</text>
+                            <rect x="25" y="110" width="75" height="65" stroke="#6B7280" stroke-width="0.8" fill="rgba(107,114,128,0.1)"/>
+                            <text x="62" y="146" text-anchor="middle" font-size="7" fill="#6B7280" font-family="Heebo">מטבח</text>
+                            <rect x="210" y="25" width="50" height="160" stroke="#6B7280" stroke-width="0.8" fill="rgba(107,114,128,0.1)"/>
+                            <text x="235" y="108" text-anchor="middle" font-size="7" fill="#6B7280" font-family="Heebo">מסדרון</text>
+                            <!-- Dimension marks -->
+                            <line x1="15" y1="190" x2="265" y2="190" stroke="#1B3A6B" stroke-width="0.5" stroke-dasharray="4,3"/>
+                            <line x1="15" y1="188" x2="15" y2="192" stroke="#1B3A6B" stroke-width="1"/>
+                            <line x1="265" y1="188" x2="265" y2="192" stroke="#1B3A6B" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">תוכנית פנים</span>
+                        <h3>משרד בן 3 חדרים — ירושלים</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-in">
+                    <div class="portfolio-visual">
+                        <!-- Measurement Survey SVG -->
+                        <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="280" height="200" fill="#f9fafb"/>
+                            <defs><pattern id="g5" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0L0 0 0 14" fill="none" stroke="#1B3A6B" stroke-width="0.2" opacity="0.4"/></pattern></defs>
+                            <rect width="280" height="200" fill="url(#g5)"/>
+                            <!-- Irregular shaped plot -->
+                            <polygon points="40,30 200,20 250,80 240,170 80,180 20,120" stroke="#111827" stroke-width="1.5" fill="none"/>
+                            <!-- Internal measurement lines with red dashes -->
+                            <line x1="40" y1="30" x2="200" y2="20" stroke="#e51722" stroke-width="0.7" stroke-dasharray="5,3"/>
+                            <line x1="200" y1="20" x2="250" y2="80" stroke="#e51722" stroke-width="0.7" stroke-dasharray="5,3"/>
+                            <line x1="250" y1="80" x2="240" y2="170" stroke="#e51722" stroke-width="0.7" stroke-dasharray="5,3"/>
+                            <line x1="240" y1="170" x2="80" y2="180" stroke="#e51722" stroke-width="0.7" stroke-dasharray="5,3"/>
+                            <line x1="80" y1="180" x2="20" y2="120" stroke="#e51722" stroke-width="0.7" stroke-dasharray="5,3"/>
+                            <line x1="20" y1="120" x2="40" y2="30" stroke="#e51722" stroke-width="0.7" stroke-dasharray="5,3"/>
+                            <!-- Measurement labels -->
+                            <text x="120" y="18" text-anchor="middle" font-size="8" fill="#e51722" font-family="Heebo">18.50 מ׳</text>
+                            <text x="240" y="55" text-anchor="middle" font-size="8" fill="#e51722" font-family="Heebo">9.20 מ׳</text>
+                            <text x="170" y="182" text-anchor="middle" font-size="8" fill="#e51722" font-family="Heebo">21.30 מ׳</text>
+                            <!-- Corner dots -->
+                            <circle cx="40" cy="30" r="3" fill="#1B3A6B"/>
+                            <circle cx="200" cy="20" r="3" fill="#1B3A6B"/>
+                            <circle cx="250" cy="80" r="3" fill="#1B3A6B"/>
+                            <circle cx="240" cy="170" r="3" fill="#1B3A6B"/>
+                            <circle cx="80" cy="180" r="3" fill="#1B3A6B"/>
+                            <circle cx="20" cy="120" r="3" fill="#1B3A6B"/>
+                            <!-- Center point -->
+                            <circle cx="140" cy="100" r="2" fill="#e51722" opacity="0.6"/>
+                            <line x1="136" y1="100" x2="144" y2="100" stroke="#e51722" stroke-width="0.8"/>
+                            <line x1="140" y1="96" x2="140" y2="104" stroke="#e51722" stroke-width="0.8"/>
+                        </svg>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">סקר מדידה</span>
+                        <h3>מגרש בנייה — חיפה</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-in">
+                    <div class="portfolio-visual">
+                        <!-- 3D Interior Visualization SVG -->
+                        <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="280" height="200" fill="#0f172a"/>
+                            <defs><pattern id="g6" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0L0 0 0 14" fill="none" stroke="#1B3A6B" stroke-width="0.4" opacity="0.6"/></pattern></defs>
+                            <rect width="280" height="200" fill="url(#g6)" opacity="0.5"/>
+                            <!-- Interior room in perspective -->
+                            <!-- Back wall -->
+                            <polygon points="80,40 200,40 200,140 80,140" stroke="#6B90B3" stroke-width="0.8" fill="rgba(107,144,179,0.05)"/>
+                            <!-- Floor perspective -->
+                            <polygon points="20,170 80,140 200,140 260,170" stroke="#e51722" stroke-width="1" fill="rgba(229,23,34,0.05)"/>
+                            <!-- Left wall perspective -->
+                            <polygon points="20,20 80,40 80,140 20,170" stroke="#1B3A6B" stroke-width="0.8" fill="rgba(27,58,107,0.08)"/>
+                            <!-- Right wall perspective -->
+                            <polygon points="260,20 200,40 200,140 260,170" stroke="#1B3A6B" stroke-width="0.8" fill="rgba(27,58,107,0.08)"/>
+                            <!-- Ceiling -->
+                            <polygon points="20,20 80,40 200,40 260,20" stroke="#6B90B3" stroke-width="0.8" fill="rgba(107,144,179,0.05)"/>
+                            <!-- Window on back wall -->
+                            <rect x="110" y="55" width="60" height="50" stroke="#e51722" stroke-width="0.8" fill="rgba(229,23,34,0.06)"/>
+                            <!-- Door on back wall -->
+                            <rect x="165" y="95" width="30" height="45" stroke="#6B90B3" stroke-width="0.8" fill="none"/>
+                            <!-- Vanishing lines -->
+                            <line x1="140" y1="90" x2="20" y2="20" stroke="#6B7280" stroke-width="0.3" opacity="0.4"/>
+                            <line x1="140" y1="90" x2="260" y2="20" stroke="#6B7280" stroke-width="0.3" opacity="0.4"/>
+                            <line x1="140" y1="90" x2="20" y2="170" stroke="#6B7280" stroke-width="0.3" opacity="0.4"/>
+                            <line x1="140" y1="90" x2="260" y2="170" stroke="#6B7280" stroke-width="0.3" opacity="0.4"/>
+                            <!-- Vanishing point -->
+                            <circle cx="140" cy="90" r="2" fill="#e51722" opacity="0.8"/>
+                        </svg>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag portfolio-tag-dark">הדמיית פנים</span>
+                        <h3>דירת גג — נתניה</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="section-header">
+                    <span class="section-label light">בואו נדבר</span>
+                    <h2 class="section-title light">צרו קשר</h2>
+                    <p class="section-subtitle light">מענה מיידי · ליווי אישי · מחיר הוגן</p>
+                </div>
+                <div class="contact-methods">
+                    <a href="tel:+972523386911" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.4 12.15a19.79 19.79 0 01-3.07-8.67A2 2 0 013.5 1.5h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9a16 16 0 006.09 6.09l1.37-1.37a2 2 0 012.12-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">טלפון</span>
+                            <span class="contact-value" dir="ltr">052-338-6911</span>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/972523386911?text=היי%20SHINE,%20אשמח%20לשמוע%20עוד%20על%20השירותים%20שלכם"
+                       class="contact-card contact-card-whatsapp"
+                       target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.111 1.521 5.839L.05 23.886l6.138-1.61A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.833 0-3.576-.496-5.067-1.359l-.363-.216-3.768.988 1.005-3.672-.237-.375A9.932 9.932 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm5.511-7.396c-.299-.15-1.725-.851-1.992-.948-.267-.099-.462-.15-.657.15-.195.299-.756.948-.927 1.143-.171.195-.342.219-.633.072-.299-.15-1.23-.453-2.343-1.446-.867-.774-1.452-1.731-1.623-2.022-.171-.299-.018-.45.129-.594.132-.132.291-.342.438-.513.147-.171.195-.291.291-.486.099-.195.051-.366-.024-.513s-.657-1.584-.9-2.169c-.237-.57-.477-.492-.657-.501-.171-.009-.366-.009-.561-.009s-.513.072-.78.366c-.267.291-1.02.996-1.02 2.433s1.044 2.822 1.191 3.017c.147.195 2.061 3.147 4.995 4.416.699.303 1.245.483 1.671.618.702.222 1.341.191 1.845.117.564-.084 1.725-.705 1.968-1.386.243-.681.243-1.266.171-1.386-.072-.12-.267-.195-.561-.342z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">וואטסאפ</span>
+                            <span class="contact-value">שלחו הודעה עכשיו</span>
+                        </div>
+                    </a>
+                    <a href="mailto:SHINE.measur@gmail.com" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">אימייל</span>
+                            <span class="contact-value">SHINE.measur@gmail.com</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">SHINE</span>
+                    <p class="footer-desc">מייצרים פתרונות ויזואלים<br>שירותי מדידה · שרטוט · הדמייה</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="עמוד אינסטגרם" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <circle cx="12" cy="12" r="4.5"/>
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="עמוד פייסבוק" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>ניווט מהיר</h3>
+                    <ul>
+                        <li><a href="#home">דף הבית</a></li>
+                        <li><a href="#services">שירותים</a></li>
+                        <li><a href="#portfolio">פורטפוליו</a></li>
+                        <li><a href="testimonials.html">המלצות</a></li>
+                        <li><a href="#contact">צור קשר</a></li>
+                        <li><a href="accessibility-statement.html">הצהרת נגישות</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>פרטי קשר</h3>
+                    <p>
+                        <a href="tel:+972523386911" dir="ltr">052-338-6911</a>
+                    </p>
+                    <p>
+                        <a href="mailto:SHINE.measur@gmail.com">SHINE.measur@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://wa.me/972523386911" target="_blank" rel="noopener noreferrer">וואטסאפ</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SHINE · כל הזכויות שמורות</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
