@@ -657,7 +657,7 @@ a:focus-visible {
 }
 
 .step-number {
-    font-size: calc(3rem * var(--font-size-scale));
+    font-size: calc(2rem * var(--font-size-scale));
     font-weight: 800;
     color: transparent;
     -webkit-text-stroke: 1.5px var(--red);
@@ -698,8 +698,17 @@ a:focus-visible {
 
 .advantages-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 24px;
+}
+
+.advantage-card {
+    grid-column: span 2;
+}
+
+/* Center the last 2 cards when there are 5 total */
+.advantage-card:nth-child(4) {
+    grid-column: 2 / span 2;
 }
 
 .advantage-card {
@@ -1295,6 +1304,10 @@ body.high-contrast .footer {
     .advantages-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+    }
+    .advantage-card,
+    .advantage-card:nth-child(4) {
+        grid-column: 1;
     }
 
     /* Portfolio */
