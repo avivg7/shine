@@ -1290,9 +1290,7 @@ body.high-contrast .footer {
     }
 
     .process-connector {
-        transform: rotate(90deg);
-        padding: 0;
-        margin: 8px 0;
+        display: none;
     }
 
     .process-step {
