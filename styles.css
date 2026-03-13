@@ -767,37 +767,57 @@ a:focus-visible {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 .portfolio-item {
     background-color: var(--bg-white);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 10px;
     overflow: hidden;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .portfolio-item:hover {
-    border-color: var(--border-strong);
-    box-shadow: 0 8px 30px var(--shadow-md);
+    border-color: var(--blue);
+    box-shadow: 0 8px 30px rgba(27,58,107,0.12);
     transform: translateY(-4px);
 }
 
 .portfolio-visual {
     width: 100%;
-    height: 200px;
+    height: 240px;
     overflow: hidden;
+    position: relative;
+}
+
+.portfolio-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-thumb-img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(27,58,107,0.45);
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.portfolio-visual svg {
-    width: 100%;
-    height: 100%;
-    display: block;
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
 }
 
 .portfolio-info {
@@ -818,16 +838,225 @@ a:focus-visible {
     margin-bottom: 8px;
 }
 
-.portfolio-tag-dark {
-    color: #e51722;
-    background-color: rgba(229,23,34,0.10);
-}
-
 .portfolio-info h3 {
     font-size: calc(0.95rem * var(--font-size-scale));
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 0;
+}
+
+/* ── Project Modal ── */
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.project-modal.active {
+    display: flex;
+}
+
+.project-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    cursor: pointer;
+}
+
+.project-modal-inner {
+    position: relative;
+    background: var(--bg-white);
+    border-radius: 12px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 1;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+
+.project-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg-white);
+    z-index: 2;
+    border-radius: 12px 12px 0 0;
+}
+
+.project-modal-header h3 {
+    font-size: calc(1.1rem * var(--font-size-scale));
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-medium);
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.modal-close-btn:hover {
+    background: var(--bg-light);
+}
+
+.project-modal-body {
+    padding: 24px;
+}
+
+.modal-images-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.modal-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.modal-img:hover {
+    opacity: 0.88;
+}
+
+.modal-video-wrap {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.modal-video-wrap iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    .modal-images-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project-modal-body {
+        padding: 16px;
+    }
+}
+
+/* ── Image Lightbox ── */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    cursor: pointer;
+}
+
+.lightbox-img {
+    position: relative;
+    z-index: 1;
+    max-width: 88vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    display: block;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 2;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+    background: rgba(255,255,255,0.28);
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.lightbox-arrow:hover {
+    background: rgba(255,255,255,0.28);
+}
+
+.lightbox-prev { right: 18px; }
+.lightbox-next { left: 18px; }
+
+.lightbox-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.85rem;
+    font-family: var(--font-main, 'Heebo', sans-serif);
+    background: rgba(0,0,0,0.4);
+    padding: 4px 14px;
+    border-radius: 20px;
 }
 
 /* ===============================================
@@ -1180,7 +1409,7 @@ body.high-contrast .footer {
    =============================================== */
 @media (max-width: 1024px) {
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* stays 2×2 */
     }
 
     .footer-content {
