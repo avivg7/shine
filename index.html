@@ -1,389 +1,425 @@
-// ===============================================
-// SHINE — Main JavaScript
-// ===============================================
-document.addEventListener('DOMContentLoaded', function() {
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SHINE - שירותי מדידה, שרטוט והדמיית 3D מקצועיים לאדריכלים, מעצבי פנים ומהנדסים">
+    <title>SHINE | מדידה · שרטוט · הדמייה</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    // ===============================================
-    // תפריט נגישות
-    // ===============================================
-    const accessibilityToggle = document.getElementById('accessibility-toggle');
-    const accessibilityOptions = document.getElementById('accessibility-options');
-    const accessibilityButtons = document.querySelectorAll('.accessibility-btn');
-    const root = document.documentElement;
-    let currentFontScale = 1;
+    <!-- תפריט נגישות -->
+    <div id="accessibility-menu" class="accessibility-menu" role="region" aria-label="תפריט נגישות">
+        <button id="accessibility-toggle" class="accessibility-toggle" aria-label="פתח תפריט נגישות" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+            <span>נגישות</span>
+        </button>
+        <div id="accessibility-options" class="accessibility-options" aria-hidden="true">
+            <h2>אפשרויות נגישות</h2>
+            <button class="accessibility-btn" data-action="increase-font" aria-label="הגדל גופן">
+                <span class="icon">A+</span><span>הגדל גופן</span>
+            </button>
+            <button class="accessibility-btn" data-action="decrease-font" aria-label="הקטן גופן">
+                <span class="icon">A-</span><span>הקטן גופן</span>
+            </button>
+            <button class="accessibility-btn" data-action="high-contrast" aria-label="ניגודיות גבוהה">
+                <span class="icon">◐</span><span>ניגודיות גבוהה</span>
+            </button>
+            <button class="accessibility-btn" data-action="reset" aria-label="אפס הגדרות">
+                <span class="icon">↻</span><span>אפס הגדרות</span>
+            </button>
+            <a href="accessibility-statement.html" class="accessibility-link">הצהרת נגישות</a>
+        </div>
+    </div>
 
-    loadAccessibilitySettings();
+    <!-- כפתור וואטסאפ צף -->
+    <a href="https://wa.me/972523386911?text=היי%20SHINE,%20אשמח%20לשמוע%20עוד%20על%20השירותים%20שלכם"
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="פנה אלינו בוואטסאפ">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.824.738 5.482 2.028 7.784L.067 31.848l8.292-2.176A15.923 15.923 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.444 0-4.768-.662-6.756-1.812l-.484-.288-5.024 1.32 1.34-4.896-.316-.5A13.242 13.242 0 012.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
+            <path d="M23.348 19.472c-.388-.196-2.3-1.136-2.656-1.264-.356-.132-.616-.196-.876.196-.26.388-1.008 1.264-1.236 1.524-.228.26-.456.292-.844.096-.388-.196-1.64-.604-3.124-1.928-1.156-1.032-1.936-2.308-2.164-2.696-.228-.388-.024-.6.172-.792.176-.176.388-.456.584-.684.196-.228.26-.388.388-.648.132-.26.068-.488-.032-.684-.1-.196-.876-2.112-1.2-2.892-.316-.76-.636-.656-.876-.668-.228-.012-.488-.012-.748-.012s-.684.096-1.04.488c-.356.388-1.36 1.328-1.36 3.244s1.392 3.764 1.588 4.024c.196.26 2.748 4.196 6.656 5.884.932.404 1.66.644 2.228.824.936.296 1.788.256 2.46.156.752-.112 2.3-.94 2.624-1.848.324-.908.324-1.688.228-1.848-.096-.16-.356-.26-.744-.456z"/>
+        </svg>
+    </a>
 
-    accessibilityToggle.addEventListener('click', function() {
-        const isExpanded = accessibilityToggle.getAttribute('aria-expanded') === 'true';
-        accessibilityToggle.setAttribute('aria-expanded', !isExpanded);
-        accessibilityOptions.classList.toggle('active');
-        accessibilityOptions.setAttribute('aria-hidden', isExpanded);
-    });
+    <!-- כפתור טלפון צף -->
+    <a href="tel:+972523386911" class="phone-float" aria-label="התקשר אלינו">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+            <path d="M25.36 20.12l-3.52-1.52c-.48-.2-1.04-.08-1.4.32l-1.56 1.56c-2.84-1.44-5.16-3.76-6.6-6.6l1.56-1.56c.4-.36.52-.92.32-1.4l-1.52-3.52c-.24-.56-.84-.88-1.44-.76l-3.2.64c-.6.12-1.04.64-1.04 1.24C6.96 18.28 13.72 25.04 22.48 25.04c.6 0 1.12-.44 1.24-1.04l.64-3.2c.12-.6-.2-1.2-.76-1.44z"/>
+        </svg>
+    </a>
 
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.accessibility-menu')) {
-            accessibilityOptions.classList.remove('active');
-            accessibilityToggle.setAttribute('aria-expanded', 'false');
-            accessibilityOptions.setAttribute('aria-hidden', 'true');
-        }
-    });
+    <!-- תפריט ניווט -->
+    <nav class="navbar" role="navigation" aria-label="תפריט ראשי">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo" aria-label="SHINE - דף הבית">
+                    <img src="images/logo.png" alt="SHINE - מדידה שרטוט הדמייה" class="logo-image">
+                </a>
+                <button class="mobile-menu-toggle" aria-label="פתח תפריט" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="#home" role="menuitem">דף הבית</a></li>
+                    <li role="none"><a href="#services" role="menuitem">שירותים</a></li>
+                    <li role="none"><a href="#portfolio" role="menuitem">פורטפוליו</a></li>
+                    <li role="none"><a href="testimonials.html" role="menuitem">המלצות</a></li>
+                    <li role="none"><a href="#contact" role="menuitem" class="nav-contact-link">צור קשר</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    accessibilityButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const action = this.getAttribute('data-action');
-            switch(action) {
-                case 'increase-font':   increaseFontSize(); break;
-                case 'decrease-font':   decreaseFontSize(); break;
-                case 'high-contrast':   toggleHighContrast(); break;
-                case 'reset':           resetAccessibility(); break;
-            }
-        });
-    });
+    <!-- Hero Section -->
+    <section id="home" class="hero" role="banner">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <!-- <p class="hero-label">שירותי מדידה, שרטוט והדמייה</p>-->
+                    <h1 class="hero-title">SHINE</h1>
+                    <p class="hero-subtitle">מדידות לייזר וסיורים וירטואליים 360</p>
+                    <!-- <p class="hero-line">שירותי מדידה והדמייה מקצועיים —</p>-->
+                    <!-- <p class="hero-tagline">הופכים את החלום למציאות ויזואלית</p>-->
+                    <div class="hero-cta-group">
+                        <a href="#contact" class="btn-primary">אני רוצה הצעה למדידה</a>
+                        <a href="#portfolio" class="btn-secondary">לפורטפוליו ←</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="images/profile_logo.png" alt="SHINE - שני אקוקה" class="hero-profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function increaseFontSize() {
-        if (currentFontScale < 1.5) {
-            currentFontScale = Math.round((currentFontScale + 0.1) * 10) / 10;
-            root.style.setProperty('--font-size-scale', currentFontScale);
-            saveAccessibilitySettings();
-            announceToScreenReader('גופן הוגדל');
-        }
-    }
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">מה אנחנו מציעים</span>
+                <h2 class="section-title">השירותים שלנו</h2>
+                <p class="section-subtitle">פתרונות מקצועיים לכל שלב בתכנון הפרויקט</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-in">
+                    <div class="service-icon red">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M3 5h2M3 8h2M3 11h2"/>
+                            <rect x="7" y="3" width="14" height="18" rx="1"/>
+                            <path d="M10 7h8M10 11h8M10 15h5" stroke-dasharray="1.5 1.5"/>
+                        </svg>
+                    </div>
+                    <h3>סריקת לייזר הנדסית</h3>
+                    <p>סריקת (LiDAR) המצלמה משגרת מיליוני קרני לייזר ליצירת ענן נקודות של מידע גיאומטרי מדוייק ממנו ניתן למדוד כל מרחק עובי או גובה ישירות מהמחשב.</p>
+                </div>
+                <div class="service-card animate-in">
+                    <div class="service-icon blue">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M12 19l7-7-7-7"/>
+                            <path d="M5 5l4 4-4 4"/>
+                            <rect x="2" y="3" width="20" height="18" rx="2" stroke-dasharray="2 1.5"/>
+                            <path d="M8 12h8"/>
+                        </svg>
+                    </div>
+                    <h3>תכניות עבודה ברמת דיוק גבוהה</h3>
+                    <p>הופכים סריקת לייזר לקבצי עבודה AUtoCAD / Revit ו- DWG מוכנים לעבודה, מיפוי הנדסי של הפרויקט ברמת דיוק גבוהה.</p>
+                </div>
+                <div class="service-card animate-in">
+                    <div class="service-icon red">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>Digital Twin וסיור 360 </h3>
+                    <p>האתר אצלכם על המחשב ובטלפון, תיעוד אינטראקטיבי מלא ומדוייק. חוסך זמן רב וזמין בכל עת, חווית ביקור בנכס מכל מקום בעולם.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function decreaseFontSize() {
-        if (currentFontScale > 0.8) {
-            currentFontScale = Math.round((currentFontScale - 0.1) * 10) / 10;
-            root.style.setProperty('--font-size-scale', currentFontScale);
-            saveAccessibilitySettings();
-            announceToScreenReader('גופן הוקטן');
-        }
-    }
+    <!-- Process Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">איך זה עובד</span>
+                <h2 class="section-title">שלושה שלבים פשוטים</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step animate-in">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>סריקה הנדסית בשטח</h3>
+                        <p>מגיעים לנכס וסורקים את המרחב באמצעות חיישני לייזר וצילום פנורמי. אנו לוכדים מיליוני נקודות מדידה (Point Cloud) שיוצרות בסיס נתונים מושלם
+.</p>
+                    </div>
+                </div>
+                <div class="process-connector" aria-hidden="true">
+                    <svg width="60" height="2" viewBox="0 0 60 2">
+                        <line x1="0" y1="1" x2="60" y2="1" stroke="#e51722" stroke-width="1.5" stroke-dasharray="6,4"/>
+                    </svg>
+                </div>
+                <div class="process-step animate-in">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>עיבוד וייצור תאום דיגיטלי</h3>
+                        <p>הנתונים מעובדים למודל תלת-ממדי אינטראקטיבי, בשלב זה הנכס הופך ל'אתר חי' שניתן למדוד בו כל קיר, פינה או תשתית מרחוק.</p>
+                    </div>
+                </div>
+                <div class="process-connector" aria-hidden="true">
+                    <svg width="60" height="2" viewBox="0 0 60 2">
+                        <line x1="0" y1="1" x2="60" y2="1" stroke="#e51722" stroke-width="1.5" stroke-dasharray="6,4"/>
+                    </svg>
+                </div>
+                <div class="process-step animate-in">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>מסירת קבצי עבודה ושיווק</h3>
+                        <p>אתם מקבלים לינק לסיור הווירטואלי לשיווק הנכס, ובמקביל קבצי שרטוט (DWG) מוכנים לעבודה מיידית של האדריכל/ית או המעצב/ת.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function toggleHighContrast() {
-        document.body.classList.toggle('high-contrast');
-        const isHighContrast = document.body.classList.contains('high-contrast');
-        saveAccessibilitySettings();
-        announceToScreenReader(isHighContrast ? 'ניגודיות גבוהה הופעלה' : 'ניגודיות גבוהה בוטלה');
-    }
+    <!-- Advantages Section -->
+    <section id="advantages" class="advantages-section">
+        <div class="container">
+            <div class="section-header">
+                <!-- A<span class="section-label">למה SHINE</span>-->
+                <h2 class="section-title">למה לבחור ב-SHINE?</h2>
+                <p class="section-subtitle">השילוב המנצח בין דיוק הנדסי לטכנולוגיית המחר.</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card animate-in">
+                    <div class="advantage-accent red"></div>
+                    <h3>דיוק הנדסי ללא פשרות</h3>
+                    <p>במקום לנחש, אנחנו סורקים. באמצעות חיישני לייזר מתקדמים, אנו מפיקים נתונים ברמת דיוק גבוהה, מניעת טעויות תכנון יקרות שמתגלות רק בשלב הביצוע.</p>
+                </div>
+                <div class="advantage-card animate-in">
+                    <div class="advantage-accent blue"></div>
+                    <h3>תיעוד "As-Is" בלתי ניתן לערעור</h3>
+                    <p>אנחנו מייצרים "תעודת ביטוח" ויזואלית והנדסית לנכס שלכם. כלי משפטי והנדסי קריטי להתחדשות עירונית, כינוס נכסים ופיקוח בנייה. התיעוד ב-360° מהווה עדות חיה למצב הנכס, מונע סכסוכים ומשמש הוכחה חותכת מול יזמים וקבלנים.</p>
+                </div>
+                <div class="advantage-card animate-in">
+                    <div class="advantage-accent red"></div>
+                    <h3>האתר אצלכם במשרד 24/7</h3>
+                    <p>חוסכים לכם זמן, דלק וביקורים מיותרים בשטח. בזכות ה"תאום הדיגיטלי" (Matterport), אתם יכולים לבקר בנכס, למדוד מרחקים ולקבל החלטות תכנוניות מהמחשב או מהנייד. כל אנשי המקצוע עובדים על בסיס מידע אחיד ומדויק מרחוק.</p>
+                </div>
+                <div class="advantage-card animate-in">
+                    <div class="advantage-accent blue"></div>
+                    <h3>מעטפת פתרונות מקצה לקצה</h3>
+                    <p>אנחנו לא רק מוסרים קובץ, אנחנו מספקים פלטפורמה. שירות משולב הכולל סריקה בשטח, הפקת קבצי DWG/BIM מוכנים לעבודה, וסיור וירטואלי שמשמש ככלי שיווקי מטורף לסגירת עסקאות מכירה והשכרה.</p>
+                </div>
+                <div class="advantage-card animate-in">
+                    <div class="advantage-accent red"></div>
+                    <h3>סטנדרט שירות של פרימיום</h3>
+                    <p>זמינות גבוהה, מענה אנושי מקצועי ועמידה בלוחות זמנים קשיחים. אנחנו מבינים את הקצב של עולם הנדל"ן. התוצרים שלנו נמסרים בפורמטים המתקדמים ביותר, נקיים ומוכנים לעבודה מיידית, כדי שהפרויקט שלכם לא יעצור לרגע.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function resetAccessibility() {
-        currentFontScale = 1;
-        root.style.setProperty('--font-size-scale', 1);
-        document.body.classList.remove('high-contrast');
-        localStorage.removeItem('accessibilitySettings');
-        announceToScreenReader('הגדרות נגישות אופסו');
-    }
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">העבודות שלנו</span>
+                <h2 class="section-title">פורטפוליו</h2>
+                <p class="section-subtitle">דוגמאות מפרויקטים שביצענו</p>
+            </div>
+            <div class="portfolio-grid">
 
-    function saveAccessibilitySettings() {
-        const settings = {
-            fontScale: currentFontScale,
-            highContrast: document.body.classList.contains('high-contrast')
-        };
-        localStorage.setItem('accessibilitySettings', JSON.stringify(settings));
-    }
+                <div class="portfolio-item animate-in" onclick="openProject('a')" role="button" tabindex="0" aria-label="פתח פרויקט: תיעוד לחברת ביטוח">
+                    <div class="portfolio-visual">
+                        <img src="./images/projects/a_pic5.jpg" alt="תיעוד לחברת ביטוח" class="portfolio-thumb-img">
+                        <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">תיעוד</span>
+                        <h3>תיעוד לחברת ביטוח</h3>
+                    </div>
+                </div>
 
-    function loadAccessibilitySettings() {
-        const savedSettings = localStorage.getItem('accessibilitySettings');
-        if (savedSettings) {
-            const settings = JSON.parse(savedSettings);
-            currentFontScale = settings.fontScale || 1;
-            root.style.setProperty('--font-size-scale', currentFontScale);
-            if (settings.highContrast) {
-                document.body.classList.add('high-contrast');
-            }
-        }
-    }
+                <div class="portfolio-item animate-in" onclick="openProject('b')" role="button" tabindex="0" aria-label="פתח פרויקט: סיור וירטואלי ומדידה לשיפוץ גינה">
+                    <div class="portfolio-visual">
+                        <img src="./images/projects/b_pic4.jpg" alt="סיור וירטואלי ומדידה לשיפוץ גינה" class="portfolio-thumb-img">
+                        <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">סיור וירטואלי</span>
+                        <h3>סיור וירטואלי ומדידה לשיפוץ גינה</h3>
+                    </div>
+                </div>
 
-    function announceToScreenReader(message) {
-        const announcement = document.createElement('div');
-        announcement.setAttribute('role', 'status');
-        announcement.setAttribute('aria-live', 'polite');
-        announcement.className = 'sr-only';
-        announcement.textContent = message;
-        document.body.appendChild(announcement);
-        setTimeout(() => { document.body.removeChild(announcement); }, 1000);
-    }
+                <div class="portfolio-item animate-in" onclick="openProject('c')" role="button" tabindex="0" aria-label="פתח פרויקט: סיור וירטואלי ומדידה לדירת גג">
+                    <div class="portfolio-visual">
+                        <img src="./images/projects/c_pic5.jpg" alt="סיור וירטואלי ומדידה לדירת גג" class="portfolio-thumb-img">
+                        <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">סיור וירטואלי</span>
+                        <h3>סיור וירטואלי ומדידה לדירת גג</h3>
+                    </div>
+                </div>
 
-    // ===============================================
-    // תפריט ניווט נייד
-    // ===============================================
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+                <div class="portfolio-item animate-in" onclick="openProject('d')" role="button" tabindex="0" aria-label="פתח פרויקט: סיור וירטואלי ומדידה לפני שיפוץ בית קרקע">
+                    <div class="portfolio-visual">
+                        <img src="./images/projects/d_pic4.jpg" alt="סיור וירטואלי ומדידה לפני שיפוץ בית קרקע" class="portfolio-thumb-img">
+                        <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">סיור וירטואלי</span>
+                        <h3>סיור וירטואלי ומדידה לפני שיפוץ בית קרקע</h3>
+                    </div>
+                </div>
 
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
-            navLinks.classList.toggle('active');
+            </div>
+        </div>
+    </section>
 
-            const hamburgers = mobileMenuToggle.querySelectorAll('.hamburger');
-            if (navLinks.classList.contains('active')) {
-                hamburgers[0].style.transform = 'rotate(45deg) translateY(7px)';
-                hamburgers[1].style.opacity = '0';
-                hamburgers[2].style.transform = 'rotate(-45deg) translateY(-7px)';
-            } else {
-                hamburgers[0].style.transform = 'none';
-                hamburgers[1].style.opacity = '1';
-                hamburgers[2].style.transform = 'none';
-            }
-        });
+    <!-- Project Modal -->
+    <div id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="project-modal-backdrop" id="modal-backdrop"></div>
+        <div class="project-modal-inner">
+            <div class="project-modal-header">
+                <h3 id="modal-title"></h3>
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="סגור חלון">&#x2715;</button>
+            </div>
+            <div class="project-modal-body">
+                <div class="modal-images-grid" id="modal-images"></div>
+                <div class="modal-video-wrap">
+                    <iframe id="modal-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="סרטון פרויקט"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        const navLinksItems = navLinks.querySelectorAll('a');
-        navLinksItems.forEach(link => {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                const hamburgers = mobileMenuToggle.querySelectorAll('.hamburger');
-                hamburgers[0].style.transform = 'none';
-                hamburgers[1].style.opacity = '1';
-                hamburgers[2].style.transform = 'none';
-            });
-        });
-    }
+    <!-- Image Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="תצוגה מוגדלת">
+        <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+        <button class="lightbox-close" id="lightbox-close" aria-label="סגור">&#x2715;</button>
+        <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="תמונה קודמת">&#8250;</button>
+        <img id="lightbox-img" src="" alt="" class="lightbox-img">
+        <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="תמונה הבאה">&#8249;</button>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
 
-    // ===============================================
-    // גלילה חלקה לעוגנים
-    // ===============================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href.length > 1) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = target.offsetTop - navbarHeight - 20;
-                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                }
-            }
-        });
-    });
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="section-header">
+                    <span class="section-label light">בואו נדבר</span>
+                    <h2 class="section-title light">צרו קשר</h2>
+                    <p class="section-subtitle light">מענה מיידי · ליווי אישי · מחיר הוגן</p>
+                </div>
+                <div class="contact-methods">
+                    <a href="tel:+972523386911" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.4 12.15a19.79 19.79 0 01-3.07-8.67A2 2 0 013.5 1.5h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9a16 16 0 006.09 6.09l1.37-1.37a2 2 0 012.12-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">טלפון</span>
+                            <span class="contact-value" dir="ltr">052-338-6911</span>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/972523386911?text=היי%20SHINE,%20אשמח%20לשמוע%20עוד%20על%20השירותים%20שלכם"
+                       class="contact-card contact-card-whatsapp"
+                       target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.111 1.521 5.839L.05 23.886l6.138-1.61A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.833 0-3.576-.496-5.067-1.359l-.363-.216-3.768.988 1.005-3.672-.237-.375A9.932 9.932 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm5.511-7.396c-.299-.15-1.725-.851-1.992-.948-.267-.099-.462-.15-.657.15-.195.299-.756.948-.927 1.143-.171.195-.342.219-.633.072-.299-.15-1.23-.453-2.343-1.446-.867-.774-1.452-1.731-1.623-2.022-.171-.299-.018-.45.129-.594.132-.132.291-.342.438-.513.147-.171.195-.291.291-.486.099-.195.051-.366-.024-.513s-.657-1.584-.9-2.169c-.237-.57-.477-.492-.657-.501-.171-.009-.366-.009-.561-.009s-.513.072-.78.366c-.267.291-1.02.996-1.02 2.433s1.044 2.822 1.191 3.017c.147.195 2.061 3.147 4.995 4.416.699.303 1.245.483 1.671.618.702.222 1.341.191 1.845.117.564-.084 1.725-.705 1.968-1.386.243-.681.243-1.266.171-1.386-.072-.12-.267-.195-.561-.342z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">וואטסאפ</span>
+                            <span class="contact-value">שלחו הודעה עכשיו</span>
+                        </div>
+                    </a>
+                    <a href="mailto:SHINE.measur@gmail.com" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">אימייל</span>
+                            <span class="contact-value">SHINE.measur@gmail.com</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    // ===============================================
-    // Navbar scroll shrink
-    // ===============================================
-    const navbar = document.querySelector('.navbar');
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">SHINE</span>
+                    <p class="footer-desc">מייצרים פתרונות ויזואלים<br>שירותי מדידה · שרטוט · הדמייה</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="עמוד אינסטגרם" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <circle cx="12" cy="12" r="4.5"/>
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="עמוד פייסבוק" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>ניווט מהיר</h3>
+                    <ul>
+                        <li><a href="#home">דף הבית</a></li>
+                        <li><a href="#services">שירותים</a></li>
+                        <li><a href="#portfolio">פורטפוליו</a></li>
+                        <li><a href="testimonials.html">המלצות</a></li>
+                        <li><a href="#contact">צור קשר</a></li>
+                        <li><a href="accessibility-statement.html">הצהרת נגישות</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>פרטי קשר</h3>
+                    <p>
+                        <a href="tel:+972523386911" dir="ltr">052-338-6911</a>
+                    </p>
+                    <p>
+                        <a href="mailto:SHINE.measur@gmail.com">SHINE.measur@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://wa.me/972523386911" target="_blank" rel="noopener noreferrer">וואטסאפ</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SHINE · כל הזכויות שמורות</p>
+            </div>
+        </div>
+    </footer>
 
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (navbar) {
-            if (scrollTop > 60) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
-        }
-    });
+    <script src="script.js"></script>
 
-    // ===============================================
-    // Scroll-in animations (Intersection Observer)
-    // ===============================================
-    const observerOptions = {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
-
-    // ===============================================
-    // Keyboard navigation support
-    // ===============================================
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            if (accessibilityOptions.classList.contains('active')) {
-                accessibilityOptions.classList.remove('active');
-                accessibilityToggle.setAttribute('aria-expanded', 'false');
-                accessibilityOptions.setAttribute('aria-hidden', 'true');
-                accessibilityToggle.focus();
-            }
-            if (navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                if (mobileMenuToggle) {
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    const hamburgers = mobileMenuToggle.querySelectorAll('.hamburger');
-                    hamburgers[0].style.transform = 'none';
-                    hamburgers[1].style.opacity = '1';
-                    hamburgers[2].style.transform = 'none';
-                }
-            }
-        }
-    });
-
-    // ===============================================
-    // Screen reader helper style
-    // ===============================================
-    const srStyle = document.createElement('style');
-    srStyle.textContent = `.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;}`;
-    document.head.appendChild(srStyle);
-
-    console.log('SHINE — נטען בהצלחה');
-});
-
-// ===============================================
-// Portfolio Project Modal
-// ===============================================
-const PROJECTS = {
-    a: {
-        title: 'תיעוד לחברת ביטוח',
-        images: [
-            './images/projects/a_pic1.jpg',
-            './images/projects/a_pic2.jpg',
-            './images/projects/a_pic3.jpg',
-            './images/projects/a_pic4.jpg',
-            './images/projects/a_pic5.jpg',
-        ],
-        videoId: 'bpcFJ_7AXOI',
-    },
-    b: {
-        title: 'סיור וירטואלי ומדידה לשיפוץ גינה',
-        images: [
-            './images/projects/b_pic1.jpg',
-            './images/projects/b_pic2.jpg',
-            './images/projects/b_pic3.jpg',
-            './images/projects/b_pic4.jpg',
-            './images/projects/b_pic5.jpg',
-        ],
-        videoId: 'Zz3dVQOJLpE',
-    },
-    c: {
-        title: 'סיור וירטואלי ומדידה לדירת גג',
-        images: [
-            './images/projects/c_pic1.jpg',
-            './images/projects/c_pic2.jpg',
-            './images/projects/c_pic3.jpg',
-            './images/projects/c_pic4.jpg',
-            './images/projects/c_pic5.jpg',
-        ],
-        videoId: 'rIWB_cBPuK8',
-    },
-    d: {
-        title: 'סיור וירטואלי ומדידה לפני שיפוץ בית קרקע',
-        images: [
-            './images/projects/d_pic1.jpg',
-            './images/projects/d_pic2.jpg',
-            './images/projects/d_pic3.jpg',
-            './images/projects/d_pic4.jpg',
-            './images/projects/d_pic5.jpg',
-        ],
-        videoId: 'zfyEY8mB9Fw',
-    },
-};
-
-function openProject(id) {
-    const project = PROJECTS[id];
-    if (!project) return;
-
-    document.getElementById('modal-title').textContent = project.title;
-
-    const imagesEl = document.getElementById('modal-images');
-    imagesEl.innerHTML = project.images
-        .map((src, i) => `<img src="${src}" alt="${project.title}" class="modal-img" loading="lazy" data-index="${i}" tabindex="0">`)
-        .join('');
-
-    document.getElementById('modal-video').src =
-        `https://www.youtube.com/embed/${project.videoId}`;
-
-    const modal = document.getElementById('project-modal');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    document.getElementById('modal-close-btn').focus();
-}
-
-function closeProject() {
-    const modal = document.getElementById('project-modal');
-    modal.classList.remove('active');
-    document.getElementById('modal-video').src = '';
-    document.body.style.overflow = '';
-}
-
-// ===============================================
-// Image Lightbox
-// ===============================================
-let lightboxImages = [];
-let lightboxIndex  = 0;
-
-function openLightbox(images, index) {
-    lightboxImages = images;
-    lightboxIndex  = index;
-    renderLightbox();
-    document.getElementById('lightbox').classList.add('active');
-}
-
-function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-    lightboxImages = [];
-}
-
-function renderLightbox() {
-    document.getElementById('lightbox-img').src = lightboxImages[lightboxIndex];
-    document.getElementById('lightbox-counter').textContent =
-        (lightboxIndex + 1) + ' / ' + lightboxImages.length;
-}
-
-function lightboxPrev() {
-    lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
-    renderLightbox();
-}
-
-function lightboxNext() {
-    lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
-    renderLightbox();
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('project-modal');
-    if (!modal) return;
-
-    document.getElementById('modal-close-btn').addEventListener('click', closeProject);
-    document.getElementById('modal-backdrop').addEventListener('click', closeProject);
-
-    // Lightbox controls
-    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-    document.getElementById('lightbox-backdrop').addEventListener('click', closeLightbox);
-    document.getElementById('lightbox-prev').addEventListener('click', lightboxPrev);
-    document.getElementById('lightbox-next').addEventListener('click', lightboxNext);
-
-    // Clicks on modal images → open lightbox
-    document.getElementById('modal-images').addEventListener('click', function (e) {
-        const img = e.target.closest('.modal-img');
-        if (!img) return;
-        const index  = parseInt(img.getAttribute('data-index'), 10);
-        const images = Array.from(document.querySelectorAll('#modal-images .modal-img'))
-                            .map(el => el.src);
-        openLightbox(images, index);
-    });
-
-    document.addEventListener('keydown', function (e) {
-        const lightbox = document.getElementById('lightbox');
-
-        if (lightbox.classList.contains('active')) {
-            if (e.key === 'Escape')      closeLightbox();
-            if (e.key === 'ArrowRight')  lightboxPrev();
-            if (e.key === 'ArrowLeft')   lightboxNext();
-            return;
-        }
-
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeProject();
-        }
-    });
-
-    // Keyboard support for portfolio cards
-    document.querySelectorAll('.portfolio-item[tabindex="0"]').forEach(function (card) {
-        card.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                card.click();
-            }
-        });
-    });
-});
+</body>
+</html>
