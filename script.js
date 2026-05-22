@@ -227,6 +227,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('SHINE — נטען בהצלחה');
 
+    // ── Portfolio Load More ──
+    const loadMoreBtn = document.getElementById('portfolio-load-more');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function () {
+            document.querySelectorAll('.portfolio-extra').forEach(function (item) {
+                item.style.display = '';
+                item.classList.remove('portfolio-extra');
+            });
+            loadMoreBtn.closest('.portfolio-load-more-wrap').style.display = 'none';
+        });
+    }
+
     // ── Audience Accordion ──
     document.querySelectorAll('.audience-header').forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -255,9 +267,6 @@ const PROJECTS = {
         images: [
             './images/projects/a_pic1.jpg',
             './images/projects/a_pic2.jpg',
-            './images/projects/a_pic3.jpg',
-            './images/projects/a_pic4.jpg',
-            './images/projects/a_pic5.jpg',
         ],
         videoId: 'bpcFJ_7AXOI',
     },
@@ -294,6 +303,53 @@ const PROJECTS = {
         ],
         videoId: 'zfyEY8mB9Fw',
     },
+    e: {
+        title: 'בית פרטי לשיפוץ במעלה אדומים',
+        images: [
+            './images/projects/e_pic1.jpg',
+            './images/projects/e_pic2.jpg',
+            './images/projects/e_pic3.jpg',
+            './images/projects/e_pic4.jpg',
+        ],
+        videoId: null,
+    },
+    f: {
+        title: 'בית למכירה בתל אביב',
+        images: [
+            './images/projects/f_pic1.jpg',
+            './images/projects/f_pic2.jpg',
+        ],
+        videoId: 'CFJvgAg9WMM',
+    },
+    g: {
+        title: 'דירה לשיפוץ בפתח תקווה',
+        images: [
+            './images/projects/g_pic1.jpg',
+            './images/projects/g_pic2.jpg',
+            './images/projects/g_pic3.jpg',
+        ],
+        videoId: null,
+    },
+    h: {
+        title: 'בית לשיפוץ בכפר יונה',
+        images: [
+            './images/projects/h_pic1.jpg',
+            './images/projects/h_pic2.jpg',
+            './images/projects/h_pic3.jpg',
+            './images/projects/h_pic4.jpg',
+        ],
+        videoId: null,
+    },
+    i: {
+        title: 'דירת גג לשיפוץ',
+        images: [
+            './images/projects/i_pic1.jpg',
+            './images/projects/i_pic2.jpg',
+            './images/projects/i_pic3.jpg',
+            './images/projects/i_pic4.jpg',
+        ],
+        videoId: null,
+    },
 };
 
 function openProject(id) {
@@ -307,8 +363,14 @@ function openProject(id) {
         .map((src, i) => `<img src="${src}" alt="${project.title}" class="modal-img" loading="lazy" data-index="${i}" tabindex="0">`)
         .join('');
 
-    document.getElementById('modal-video').src =
-        `https://www.youtube.com/embed/${project.videoId}`;
+    const videoWrap = document.querySelector('.modal-video-wrap');
+    if (project.videoId) {
+        document.getElementById('modal-video').src = `https://www.youtube.com/embed/${project.videoId}`;
+        videoWrap.style.display = '';
+    } else {
+        document.getElementById('modal-video').src = '';
+        videoWrap.style.display = 'none';
+    }
 
     const modal = document.getElementById('project-modal');
     modal.classList.add('active');
