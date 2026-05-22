@@ -164,15 +164,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===============================================
     const navbar = document.querySelector('.navbar');
 
+    let navbarScrolled = false;
+    let navbarRaf = null;
     window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (navbar) {
-            if (scrollTop > 60) {
+        if (navbarRaf) return;
+        navbarRaf = requestAnimationFrame(function() {
+            navbarRaf = null;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (!navbarScrolled && scrollTop > 100) {
+                navbarScrolled = true;
                 navbar.classList.add('navbar-scrolled');
-            } else {
+            } else if (navbarScrolled && scrollTop < 15) {
+                navbarScrolled = false;
                 navbar.classList.remove('navbar-scrolled');
             }
-        }
+        });
     });
 
     // ===============================================
