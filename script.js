@@ -226,6 +226,24 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(srStyle);
 
     console.log('SHINE — נטען בהצלחה');
+
+    // ── Audience Accordion ──
+    document.querySelectorAll('.audience-header').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const item = btn.closest('.audience-item');
+            const isOpen = item.classList.contains('open');
+            // close all
+            document.querySelectorAll('.audience-item.open').forEach(function (el) {
+                el.classList.remove('open');
+                el.querySelector('.audience-header').setAttribute('aria-expanded', 'false');
+            });
+            // open clicked (unless it was already open)
+            if (!isOpen) {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
 });
 
 // ===============================================
