@@ -14,27 +14,27 @@
 
     <!-- תפריט נגישות -->
     <div id="accessibility-menu" class="accessibility-menu" role="region" aria-label="תפריט נגישות">
-        <button id="accessibility-toggle" class="accessibility-toggle" aria-label="פתח תפריט נגישות" aria-expanded="false">
+        <button id="accessibility-toggle" class="accessibility-toggle" data-i18n-aria="aria-label:a11y_toggle_label" aria-label="פתח תפריט נגישות" aria-expanded="false">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
             </svg>
-            <span>נגישות</span>
+            <span data-i18n="a11y_accessibility">נגישות</span>
         </button>
         <div id="accessibility-options" class="accessibility-options" aria-hidden="true">
-            <h2>אפשרויות נגישות</h2>
-            <button class="accessibility-btn" data-action="increase-font" aria-label="הגדל גופן">
-                <span class="icon">A+</span><span>הגדל גופן</span>
+            <h2 data-i18n="a11y_options">אפשרויות נגישות</h2>
+            <button class="accessibility-btn" data-action="increase-font" data-i18n-aria="aria-label:a11y_increase" aria-label="הגדל גופן">
+                <span class="icon">A+</span><span data-i18n="a11y_increase">הגדל גופן</span>
             </button>
-            <button class="accessibility-btn" data-action="decrease-font" aria-label="הקטן גופן">
-                <span class="icon">A-</span><span>הקטן גופן</span>
+            <button class="accessibility-btn" data-action="decrease-font" data-i18n-aria="aria-label:a11y_decrease" aria-label="הקטן גופן">
+                <span class="icon">A-</span><span data-i18n="a11y_decrease">הקטן גופן</span>
             </button>
-            <button class="accessibility-btn" data-action="high-contrast" aria-label="ניגודיות גבוהה">
-                <span class="icon">◐</span><span>ניגודיות גבוהה</span>
+            <button class="accessibility-btn" data-action="high-contrast" data-i18n-aria="aria-label:a11y_contrast" aria-label="ניגודיות גבוהה">
+                <span class="icon">◐</span><span data-i18n="a11y_contrast">ניגודיות גבוהה</span>
             </button>
-            <button class="accessibility-btn" data-action="reset" aria-label="אפס הגדרות">
-                <span class="icon">↻</span><span>אפס הגדרות</span>
+            <button class="accessibility-btn" data-action="reset" data-i18n-aria="aria-label:a11y_reset" aria-label="אפס הגדרות">
+                <span class="icon">↻</span><span data-i18n="a11y_reset">אפס הגדרות</span>
             </button>
-            <a href="accessibility-statement.html" class="accessibility-link">הצהרת נגישות</a>
+            <a href="accessibility-statement.html" class="accessibility-link" data-i18n="a11y_statement">הצהרת נגישות</a>
         </div>
     </div>
 
@@ -43,6 +43,7 @@
        class="whatsapp-float"
        target="_blank"
        rel="noopener noreferrer"
+       data-i18n-aria="aria-label:whatsapp_aria"
        aria-label="פנה אלינו בוואטסאפ">
         <svg width="30" height="30" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
             <path d="M16 0C7.164 0 0 7.164 0 16c0 2.824.738 5.482 2.028 7.784L.067 31.848l8.292-2.176A15.923 15.923 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.444 0-4.768-.662-6.756-1.812l-.484-.288-5.024 1.32 1.34-4.896-.316-.5A13.242 13.242 0 012.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
@@ -51,7 +52,7 @@
     </a>
 
     <!-- כפתור טלפון צף -->
-    <a href="tel:+972523386911" class="phone-float" aria-label="התקשר אלינו">
+    <a href="tel:+972523386911" class="phone-float" data-i18n-aria="aria-label:phone_aria" aria-label="התקשר אלינו">
         <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
             <path d="M25.36 20.12l-3.52-1.52c-.48-.2-1.04-.08-1.4.32l-1.56 1.56c-2.84-1.44-5.16-3.76-6.6-6.6l1.56-1.56c.4-.36.52-.92.32-1.4l-1.52-3.52c-.24-.56-.84-.88-1.44-.76l-3.2.64c-.6.12-1.04.64-1.04 1.24C6.96 18.28 13.72 25.04 22.48 25.04c.6 0 1.12-.44 1.24-1.04l.64-3.2c.12-.6-.2-1.2-.76-1.44z"/>
         </svg>
@@ -64,18 +65,37 @@
                 <a href="index.html" class="logo" aria-label="SHINE - דף הבית">
                     <img src="images/logo.png" alt="SHINE - מדידה שרטוט הדמייה" class="logo-image">
                 </a>
-                <button class="mobile-menu-toggle" aria-label="פתח תפריט" aria-expanded="false">
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                </button>
                 <ul class="nav-links" role="menubar">
-                    <li role="none"><a href="#home" role="menuitem">דף הבית</a></li>
-                    <li role="none"><a href="#services" role="menuitem">שירותים</a></li>
-                    <li role="none"><a href="#portfolio" role="menuitem">פורטפוליו</a></li>
-                    <li role="none"><a href="#audience" role="menuitem">קהל לקוחות</a></li>
-                    <li role="none"><a href="#contact" role="menuitem" class="nav-contact-link">צור קשר</a></li>
+                    <li role="none"><a href="#home" role="menuitem" data-i18n="nav_home">דף הבית</a></li>
+                    <li role="none"><a href="#services" role="menuitem" data-i18n="nav_services">שירותים</a></li>
+                    <li role="none"><a href="#portfolio" role="menuitem" data-i18n="nav_portfolio">פורטפוליו</a></li>
+                    <li role="none"><a href="#audience" role="menuitem" data-i18n="nav_audience">קהל לקוחות</a></li>
+                    <li role="none"><a href="#contact" role="menuitem" class="nav-contact-link" data-i18n="nav_contact">צור קשר</a></li>
                 </ul>
+                <div class="nav-end-group">
+                    <!-- Language Switcher -->
+                    <div class="lang-switcher" id="lang-switcher">
+                        <button class="lang-current-btn" id="lang-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-label="בחר שפה">
+                            <span id="lang-current-label">עב</span>
+                            <span class="lang-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="lang-dropdown" id="lang-dropdown" role="menu">
+                            <button class="lang-btn active" data-lang="he" role="menuitem">עברית</button>
+                            <button class="lang-btn" data-lang="en" role="menuitem">English</button>
+                            <button class="lang-btn" data-lang="ru" role="menuitem">Русский</button>
+                            <button class="lang-btn" data-lang="ar" role="menuitem">العربية</button>
+                            <button class="lang-btn" data-lang="es" role="menuitem">Español</button>
+                            <button class="lang-btn" data-lang="it" role="menuitem">Italiano</button>
+                            <button class="lang-btn" data-lang="fr" role="menuitem">Français</button>
+                            <button class="lang-btn" data-lang="de" role="menuitem">Deutsch</button>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-toggle" data-i18n-aria="aria-label:nav_open_menu" aria-label="פתח תפריט" aria-expanded="false">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -90,11 +110,11 @@
                 <div class="hero-text">
                     <!-- <p class="hero-label">שירותי מדידה, שרטוט והדמייה</p>-->
                     <h1 class="hero-title">SHINE</h1>
-                    <p class="hero-subtitle">הכול מתחיל בתכנית מדויקת, ודאות מלאה מהסריקה הראשונה</p>
-                    <p class="hero-description">שירותי מדידות לייזר תלת-ממד, סיורים וירטואליים 3D ומידול אדריכלי מתקדם (Scan-to-BIM)<br>אנו מייצרים את התאום הדיגיטלי לנכס שלכם המונע טעויות ביצוע יקרות, מאיץ את שלבי התכנון והרישוי וחוסך ביקורים בנכס</p>
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">הכול מתחיל בתכנית מדויקת, ודאות מלאה מהסריקה הראשונה</p>
+                    <p class="hero-description" data-i18n-html="hero_desc">שירותי מדידות לייזר תלת-ממד, סיורים וירטואליים 3D ומידול אדריכלי מתקדם (Scan-to-BIM)<br>אנו מייצרים את התאום הדיגיטלי לנכס שלכם המונע טעויות ביצוע יקרות, מאיץ את שלבי התכנון והרישוי וחוסך ביקורים בנכס</p>
                     <div class="hero-cta-group">
-                        <a href="#contact" class="btn-primary">אני רוצה הצעה למדידה</a>
-                        <a href="#portfolio" class="btn-secondary">לפורטפוליו ←</a>
+                        <a href="#contact" class="btn-primary" data-i18n="hero_cta1">אני רוצה הצעה למדידה</a>
+                        <a href="#portfolio" class="btn-secondary" data-i18n="hero_cta2">לפורטפוליו ←</a>
                     </div>
                 </div>
             </div>
@@ -105,9 +125,9 @@
     <section id="audience" class="audience-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">מי עובד איתנו</span>
-                <h2 class="section-title">קהל לקוחותינו</h2>
-                <p class="section-subtitle">פתרונות מדידה ותיעוד מותאמים לכל סוג לקוח</p>
+                <span class="section-label" data-i18n="aud_label">מי עובד איתנו</span>
+                <h2 class="section-title" data-i18n="aud_title">קהל לקוחותינו</h2>
+                <p class="section-subtitle" data-i18n="aud_subtitle">פתרונות מדידה ותיעוד מותאמים לכל סוג לקוח</p>
             </div>
             <div class="audience-accordion">
 
@@ -115,12 +135,12 @@
                     <button class="audience-header" aria-expanded="false">
                         <span class="audience-num">01</span>
                         <div class="audience-titles">
-                            <span class="audience-title">מעצבים ואדריכלים</span>
-                            <span class="audience-tagline">הופכים כל חלל לבסיס עבודה מדויק לתכנון מקצועי</span>
+                            <span class="audience-title" data-i18n="aud1_title">מעצבים ואדריכלים</span>
+                            <span class="audience-tagline" data-i18n="aud1_tagline">הופכים כל חלל לבסיס עבודה מדויק לתכנון מקצועי</span>
                         </div>
                         <span class="audience-arrow" aria-hidden="true"></span>
                     </button>
-                    <div class="audience-body">
+                    <div class="audience-body" data-i18n-html="aud1_body">
                         <p>קיר עקום שלא נלקח בחשבון, זווית נסתרת שאינה 90 מעלות, או נסיעות חוזרות לשטח כדי לבדוק "איפה מוקמה נקודת החשמל" — כל אלו מעכבים את הפרויקט וגורמים לטעויות יקרות בבית הלקוח.</p>
                         <p>אנו מספקים מדידת פנים כירורגית באמצעות סריקת לייזר LiDAR תלת-ממדית ונותנים לכם את השקט להתמקד בתכנון, עיצוב וניהול הפרויקט.</p>
                         <p>אנו מודדים דירות, בתים פרטיים, חנויות ומשרדים ומפיקים עבורך קובץ DWG (אוטוקאד) או Revit נקי, מסודר בשכבות ובגרסה הרצויה לך. מודד מקצועי הוא חלק מהצלחת הפרויקט!</p>
@@ -132,12 +152,12 @@
                     <button class="audience-header" aria-expanded="false">
                         <span class="audience-num">02</span>
                         <div class="audience-titles">
-                            <span class="audience-title">התחדשות עירונית</span>
-                            <span class="audience-tagline">אפס טעויות בשטחי תמורה — מקסימום ודאות ברווח היזמי</span>
+                            <span class="audience-title" data-i18n="aud2_title">התחדשות עירונית</span>
+                            <span class="audience-tagline" data-i18n="aud2_tagline">אפס טעויות בשטחי תמורה — מקסימום ודאות ברווח היזמי</span>
                         </div>
                         <span class="audience-arrow" aria-hidden="true"></span>
                     </button>
-                    <div class="audience-body">
+                    <div class="audience-body" data-i18n-html="aud2_body">
                         <p>הסטנדרט הטכנולוגי החדש למדידת דירות קיימות בפרויקטים של התחדשות עירונית. ודאות הנדסית חלוטה לשומות תקן 21 ולטבלאות ההקצאה.</p>
                         <p><strong>המטר שחוסך מיליונים:</strong> בפרויקט פינוי-בינוי, כל מטר רבוע שגוי במצב הקיים הוא התחייבות שגויה בתמורות לדיירים. יזמים מגלים לעיתים קרובות מדי ש"השטח בהיתר" אינו תואם את המציאות — מה שמוביל להפסדים של מיליוני שקלים ברווח הגולמי ועיכובים קריטיים.</p>
                         <div class="audience-services-grid">
@@ -155,12 +175,12 @@
                     <button class="audience-header" aria-expanded="false">
                         <span class="audience-num">03</span>
                         <div class="audience-titles">
-                            <span class="audience-title">נכסים מסחריים ושטחי תעסוקה</span>
-                            <span class="audience-tagline">מסלול מהיר מהריסה, דרך עיצוב Fit-out ועד לשוכר הבא</span>
+                            <span class="audience-title" data-i18n="aud3_title">נכסים מסחריים ושטחי תעסוקה</span>
+                            <span class="audience-tagline" data-i18n="aud3_tagline">מסלול מהיר מהריסה, דרך עיצוב Fit-out ועד לשוכר הבא</span>
                         </div>
                         <span class="audience-arrow" aria-hidden="true"></span>
                     </button>
-                    <div class="audience-body">
+                    <div class="audience-body" data-i18n-html="aud3_body">
                         <p>נכס מסחרי או משרד ריק הוא הפסד כספי נקי בכל יום שעובר. תהליך חילופי השוכרים נתקע לעיתים קרובות בשל היעדר תוכניות "מצב קיים" (As-Is) מדויקות, מה שמעכב את אדריכלי השוכר מלהתחיל בתכנון ה-Fit-out ולחתום על החוזה.</p>
                         <p>אנו מספקים סריקת לייזר מהירה ומקיפה — תוך 48 שעות מועברים קבצי Revit/DWG מדויקים הכוללים מיקומי עמודים, מחיצות ותשתיות (חשמל, אינסטלציה ומיזוג).</p>
                         <p>חישוב יחסי ברוטו-נטו (Gross-up) ושטחי העמסה קומתיים מונע ויכוחים משפטיים ועיכובים במו"מ, ומבטיח גביית שכר דירה על כל סנטימטר קיים בשטח.</p>
@@ -172,12 +192,12 @@
                     <button class="audience-header" aria-expanded="false">
                         <span class="audience-num">04</span>
                         <div class="audience-titles">
-                            <span class="audience-title">מוכרים, משכירים וכונסי נכסים</span>
-                            <span class="audience-tagline">מקצרים את זמן המדף ומסננים "תיירי נדל"ן"</span>
+                            <span class="audience-title" data-i18n="aud4_title">מוכרים, משכירים וכונסי נכסים</span>
+                            <span class="audience-tagline" data-i18n="aud4_tagline">מקצרים את זמן המדף ומסננים "תיירי נדל"ן"</span>
                         </div>
                         <span class="audience-arrow" aria-hidden="true"></span>
                     </button>
-                    <div class="audience-body">
+                    <div class="audience-body" data-i18n-html="aud4_body">
                         <p>בעולם הנדל"ן של היום, תמונות דו-ממדיות כבר לא מספיקות. השילוב בין מדידת לייזר מדויקת לטכנולוגיית תאום דיגיטלי בתלת-ממד מייצר העתק מושלם, וירטואלי ומדויק על המילימטר של הנכס.</p>
                         <p><strong>במקום לבזבז שעות על תיאומים וסיורים פיזיים</strong> עם מתעניינים לא רלוונטיים — הקונים הפוטנציאליים יכולים "לסייר" בנכס מכל מקום ובכל זמן. מי שמגיע לסיור פיזי לאחר מכן הוא קונה חם ובשל לסגירה.</p>
                         <p><strong>שקיפות מלאה שמונעת פיצוץ עסקאות:</strong> מדידת הנכס המדויקת שלנו מייצרת תוכנית קומה (Floor Plan) אמינה. שקיפות זו בונה אמון מיידי, מונעת הפתעות בשלב בדיקת השמאי, ומגנה מפני דרישות הורדת מחיר ברגע האחרון.</p>
@@ -195,9 +215,9 @@
     <section id="services" class="services-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">מה אנחנו מציעים</span>
-                <h2 class="section-title">השירותים שלנו</h2>
-                <p class="section-subtitle">פתרונות מקצועיים לכל שלב בתכנון הפרויקט</p>
+                <span class="section-label" data-i18n="svc_label">מה אנחנו מציעים</span>
+                <h2 class="section-title" data-i18n="svc_title">השירותים שלנו</h2>
+                <p class="section-subtitle" data-i18n="svc_subtitle">פתרונות מקצועיים לכל שלב בתכנון הפרויקט</p>
             </div>
             <div class="services-grid">
                 <div class="service-card animate-in">
@@ -208,8 +228,8 @@
                             <path d="M10 7h8M10 11h8M10 15h5" stroke-dasharray="1.5 1.5"/>
                         </svg>
                     </div>
-                    <h3>סריקת לייזר הנדסית</h3>
-                    <p>סריקת (LiDAR) המצלמה משגרת מיליוני קרני לייזר ליצירת ענן נקודות של מידע גיאומטרי מדוייק ממנו ניתן למדוד כל מרחק עובי או גובה ישירות מהמחשב.</p>
+                    <h3 data-i18n="svc1_title">סריקת לייזר הנדסית</h3>
+                    <p data-i18n="svc1_desc">סריקת (LiDAR) המצלמה משגרת מיליוני קרני לייזר ליצירת ענן נקודות של מידע גיאומטרי מדוייק ממנו ניתן למדוד כל מרחק עובי או גובה ישירות מהמחשב.</p>
                 </div>
                 <div class="service-card animate-in">
                     <div class="service-icon blue">
@@ -220,8 +240,8 @@
                             <path d="M8 12h8"/>
                         </svg>
                     </div>
-                    <h3>תכניות עבודה ברמת דיוק גבוהה</h3>
-                    <p>הופכים סריקת לייזר לקבצי עבודה AUtoCAD / Revit ו- DWG מוכנים לעבודה, מיפוי הנדסי של הפרויקט ברמת דיוק גבוהה.</p>
+                    <h3 data-i18n="svc2_title">תכניות עבודה ברמת דיוק גבוהה</h3>
+                    <p data-i18n="svc2_desc">הופכים סריקת לייזר לקבצי עבודה AUtoCAD / Revit ו- DWG מוכנים לעבודה, מיפוי הנדסי של הפרויקט ברמת דיוק גבוהה.</p>
                 </div>
                 <div class="service-card animate-in">
                     <div class="service-icon red">
@@ -231,8 +251,8 @@
                             <line x1="12" y1="22.08" x2="12" y2="12"/>
                         </svg>
                     </div>
-                    <h3>Digital Twin וסיור 360 </h3>
-                    <p>האתר אצלכם על המחשב ובטלפון, תיעוד אינטראקטיבי מלא ומדוייק. חוסך זמן רב וזמין בכל עת, חווית ביקור בנכס מכל מקום בעולם.</p>
+                    <h3 data-i18n="svc3_title">Digital Twin וסיור 360 </h3>
+                    <p data-i18n="svc3_desc">האתר אצלכם על המחשב ובטלפון, תיעוד אינטראקטיבי מלא ומדוייק. חוסך זמן רב וזמין בכל עת, חווית ביקור בנכס מכל מקום בעולם.</p>
                 </div>
             </div>
         </div>
@@ -242,15 +262,15 @@
     <section id="process" class="process-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">איך זה עובד</span>
-                <h2 class="section-title">שלושה שלבים פשוטים</h2>
+                <span class="section-label" data-i18n="proc_label">איך זה עובד</span>
+                <h2 class="section-title" data-i18n="proc_title">שלושה שלבים פשוטים</h2>
             </div>
             <div class="process-steps">
                 <div class="process-step animate-in">
                     <div class="step-number">01</div>
                     <div class="step-content">
-                        <h3>סריקה הנדסית בשטח</h3>
-                        <p>מגיעים לנכס וסורקים את המרחב באמצעות חיישני לייזר וצילום פנורמי. אנו לוכדים מיליוני נקודות מדידה (Point Cloud) שיוצרות בסיס נתונים מושלם
+                        <h3 data-i18n="step1_title">סריקה הנדסית בשטח</h3>
+                        <p data-i18n="step1_desc">מגיעים לנכס וסורקים את המרחב באמצעות חיישני לייזר וצילום פנורמי. אנו לוכדים מיליוני נקודות מדידה (Point Cloud) שיוצרות בסיס נתונים מושלם
 .</p>
                     </div>
                 </div>
@@ -262,8 +282,8 @@
                 <div class="process-step animate-in">
                     <div class="step-number">02</div>
                     <div class="step-content">
-                        <h3>עיבוד וייצור תאום דיגיטלי</h3>
-                        <p>הנתונים מעובדים למודל תלת-ממדי אינטראקטיבי, בשלב זה הנכס הופך ל'אתר חי' שניתן למדוד בו כל קיר, פינה או תשתית מרחוק.</p>
+                        <h3 data-i18n="step2_title">עיבוד וייצור תאום דיגיטלי</h3>
+                        <p data-i18n="step2_desc">הנתונים מעובדים למודל תלת-ממדי אינטראקטיבי, בשלב זה הנכס הופך ל'אתר חי' שניתן למדוד בו כל קיר, פינה או תשתית מרחוק.</p>
                     </div>
                 </div>
                 <div class="process-connector" aria-hidden="true">
@@ -274,8 +294,8 @@
                 <div class="process-step animate-in">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h3>מסירת קבצי עבודה ושיווק</h3>
-                        <p>אתם מקבלים לינק לסיור הווירטואלי לשיווק הנכס, ובמקביל קבצי שרטוט (DWG) מוכנים לעבודה מיידית של האדריכל/ית או המעצב/ת.</p>
+                        <h3 data-i18n="step3_title">מסירת קבצי עבודה ושיווק</h3>
+                        <p data-i18n="step3_desc">אתם מקבלים לינק לסיור הווירטואלי לשיווק הנכס, ובמקביל קבצי שרטוט (DWG) מוכנים לעבודה מיידית של האדריכל/ית או המעצב/ת.</p>
                     </div>
                 </div>
             </div>
@@ -287,34 +307,34 @@
         <div class="container">
             <div class="section-header">
                 <!-- A<span class="section-label">למה SHINE</span>-->
-                <h2 class="section-title">למה לבחור ב-SHINE?</h2>
-                <p class="section-subtitle">השילוב המנצח בין דיוק הנדסי לטכנולוגיית המחר.</p>
+                <h2 class="section-title" data-i18n="adv_title">למה לבחור ב-SHINE?</h2>
+                <p class="section-subtitle" data-i18n="adv_subtitle">השילוב המנצח בין דיוק הנדסי לטכנולוגיית המחר.</p>
             </div>
             <div class="advantages-grid">
                 <div class="advantage-card animate-in">
                     <div class="advantage-accent red"></div>
-                    <h3>דיוק הנדסי ללא פשרות</h3>
-                    <p>במקום לנחש, אנחנו סורקים. באמצעות חיישני לייזר מתקדמים, אנו מפיקים נתונים ברמת דיוק גבוהה, מניעת טעויות תכנון יקרות שמתגלות רק בשלב הביצוע.</p>
+                    <h3 data-i18n="adv1_title">דיוק הנדסי ללא פשרות</h3>
+                    <p data-i18n="adv1_desc">במקום לנחש, אנחנו סורקים. באמצעות חיישני לייזר מתקדמים, אנו מפיקים נתונים ברמת דיוק גבוהה, מניעת טעויות תכנון יקרות שמתגלות רק בשלב הביצוע.</p>
                 </div>
                 <div class="advantage-card animate-in">
                     <div class="advantage-accent blue"></div>
-                    <h3>תיעוד "As-Is" בלתי ניתן לערעור</h3>
-                    <p>אנחנו מייצרים "תעודת ביטוח" ויזואלית והנדסית לנכס שלכם. כלי משפטי והנדסי קריטי להתחדשות עירונית, כינוס נכסים ופיקוח בנייה. התיעוד ב-360° מהווה עדות חיה למצב הנכס, מונע סכסוכים ומשמש הוכחה חותכת מול יזמים וקבלנים.</p>
+                    <h3 data-i18n="adv2_title">תיעוד "As-Is" בלתי ניתן לערעור</h3>
+                    <p data-i18n="adv2_desc">אנחנו מייצרים "תעודת ביטוח" ויזואלית והנדסית לנכס שלכם. כלי משפטי והנדסי קריטי להתחדשות עירונית, כינוס נכסים ופיקוח בנייה. התיעוד ב-360° מהווה עדות חיה למצב הנכס, מונע סכסוכים ומשמש הוכחה חותכת מול יזמים וקבלנים.</p>
                 </div>
                 <div class="advantage-card animate-in">
                     <div class="advantage-accent red"></div>
-                    <h3>האתר אצלכם במשרד 24/7</h3>
-                    <p>חוסכים לכם זמן, דלק וביקורים מיותרים בשטח. בזכות ה"תאום הדיגיטלי" (Matterport), אתם יכולים לבקר בנכס, למדוד מרחקים ולקבל החלטות תכנוניות מהמחשב או מהנייד. כל אנשי המקצוע עובדים על בסיס מידע אחיד ומדויק מרחוק.</p>
+                    <h3 data-i18n="adv3_title">האתר אצלכם במשרד 24/7</h3>
+                    <p data-i18n="adv3_desc">חוסכים לכם זמן, דלק וביקורים מיותרים בשטח. בזכות ה"תאום הדיגיטלי" (Matterport), אתם יכולים לבקר בנכס, למדוד מרחקים ולקבל החלטות תכנוניות מהמחשב או מהנייד. כל אנשי המקצוע עובדים על בסיס מידע אחיד ומדויק מרחוק.</p>
                 </div>
                 <div class="advantage-card animate-in">
                     <div class="advantage-accent blue"></div>
-                    <h3>מעטפת פתרונות מקצה לקצה</h3>
-                    <p>אנחנו לא רק מוסרים קובץ, אנחנו מספקים פלטפורמה. שירות משולב הכולל סריקה בשטח, הפקת קבצי DWG/BIM מוכנים לעבודה, וסיור וירטואלי שמשמש ככלי שיווקי מטורף לסגירת עסקאות מכירה והשכרה.</p>
+                    <h3 data-i18n="adv4_title">מעטפת פתרונות מקצה לקצה</h3>
+                    <p data-i18n="adv4_desc">אנחנו לא רק מוסרים קובץ, אנחנו מספקים פלטפורמה. שירות משולב הכולל סריקה בשטח, הפקת קבצי DWG/BIM מוכנים לעבודה, וסיור וירטואלי שמשמש ככלי שיווקי מטורף לסגירת עסקאות מכירה והשכרה.</p>
                 </div>
                 <div class="advantage-card animate-in">
                     <div class="advantage-accent red"></div>
-                    <h3>סטנדרט שירות של פרימיום</h3>
-                    <p>זמינות גבוהה, מענה אנושי מקצועי ועמידה בלוחות זמנים קשיחים. אנחנו מבינים את הקצב של עולם הנדל"ן. התוצרים שלנו נמסרים בפורמטים המתקדמים ביותר, נקיים ומוכנים לעבודה מיידית, כדי שהפרויקט שלכם לא יעצור לרגע.</p>
+                    <h3 data-i18n="adv5_title">סטנדרט שירות של פרימיום</h3>
+                    <p data-i18n="adv5_desc">זמינות גבוהה, מענה אנושי מקצועי ועמידה בלוחות זמנים קשיחים. אנחנו מבינים את הקצב של עולם הנדל"ן. התוצרים שלנו נמסרים בפורמטים המתקדמים ביותר, נקיים ומוכנים לעבודה מיידית, כדי שהפרויקט שלכם לא יעצור לרגע.</p>
                 </div>
             </div>
         </div>
@@ -324,9 +344,9 @@
     <section id="portfolio" class="portfolio-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">העבודות שלנו</span>
-                <h2 class="section-title">פורטפוליו</h2>
-                <p class="section-subtitle">דוגמאות מפרויקטים שביצענו</p>
+                <span class="section-label" data-i18n="port_label">העבודות שלנו</span>
+                <h2 class="section-title" data-i18n="port_title">פורטפוליו</h2>
+                <p class="section-subtitle" data-i18n="port_subtitle">דוגמאות מפרויקטים שביצענו</p>
             </div>
             <div class="portfolio-grid">
 
@@ -336,8 +356,8 @@
                         <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     </div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">תיעוד</span>
-                        <h3>תיעוד לחברת ביטוח</h3>
+                        <span class="portfolio-tag" data-i18n="port_tag_doc">תיעוד</span>
+                        <h3 data-i18n="proj_a">תיעוד לחברת ביטוח</h3>
                     </div>
                 </div>
 
@@ -347,8 +367,8 @@
                         <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     </div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">סיור וירטואלי</span>
-                        <h3>סיור וירטואלי ומדידה לשיפוץ גינה</h3>
+                        <span class="portfolio-tag" data-i18n="port_tag_virtual">סיור וירטואלי</span>
+                        <h3 data-i18n="proj_b">סיור וירטואלי ומדידה לשיפוץ גינה</h3>
                     </div>
                 </div>
 
@@ -358,8 +378,8 @@
                         <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     </div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">סיור וירטואלי</span>
-                        <h3>סיור וירטואלי ומדידה לדירת גג</h3>
+                        <span class="portfolio-tag" data-i18n="port_tag_virtual">סיור וירטואלי</span>
+                        <h3 data-i18n="proj_c">סיור וירטואלי ומדידה לדירת גג</h3>
                     </div>
                 </div>
 
@@ -369,8 +389,8 @@
                         <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     </div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">סיור וירטואלי</span>
-                        <h3>סיור וירטואלי ומדידה לפני שיפוץ בית קרקע</h3>
+                        <span class="portfolio-tag" data-i18n="port_tag_virtual">סיור וירטואלי</span>
+                        <h3 data-i18n="proj_d">סיור וירטואלי ומדידה לפני שיפוץ בית קרקע</h3>
                     </div>
                 </div>
 
@@ -380,8 +400,8 @@
                         <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     </div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">מדידה</span>
-                        <h3>בית פרטי לשיפוץ במעלה אדומים</h3>
+                        <span class="portfolio-tag" data-i18n="port_tag_measure">מדידה</span>
+                        <h3 data-i18n="proj_e">בית פרטי לשיפוץ במעלה אדומים</h3>
                     </div>
                 </div>
 
@@ -391,8 +411,8 @@
                         <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     </div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">מדידה</span>
-                        <h3>בית למכירה בתל אביב</h3>
+                        <span class="portfolio-tag" data-i18n="port_tag_measure">מדידה</span>
+                        <h3 data-i18n="proj_f">בית למכירה בתל אביב</h3>
                     </div>
                 </div>
 
@@ -402,8 +422,8 @@
                         <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     </div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">מדידה</span>
-                        <h3>דירה לשיפוץ בפתח תקווה</h3>
+                        <span class="portfolio-tag" data-i18n="port_tag_measure">מדידה</span>
+                        <h3 data-i18n="proj_g">דירה לשיפוץ בפתח תקווה</h3>
                     </div>
                 </div>
 
@@ -413,8 +433,8 @@
                         <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     </div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">מדידה</span>
-                        <h3>בית לשיפוץ בכפר יונה</h3>
+                        <span class="portfolio-tag" data-i18n="port_tag_measure">מדידה</span>
+                        <h3 data-i18n="proj_h">בית לשיפוץ בכפר יונה</h3>
                     </div>
                 </div>
 
@@ -424,14 +444,14 @@
                         <div class="portfolio-overlay"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     </div>
                     <div class="portfolio-info">
-                        <span class="portfolio-tag">מדידה</span>
-                        <h3>דירת גג לשיפוץ</h3>
+                        <span class="portfolio-tag" data-i18n="port_tag_measure">מדידה</span>
+                        <h3 data-i18n="proj_i">דירת גג לשיפוץ</h3>
                     </div>
                 </div>
 
             </div>
             <div class="portfolio-load-more-wrap">
-                <button id="portfolio-load-more" class="portfolio-load-more-btn">טען עוד</button>
+                <button id="portfolio-load-more" class="portfolio-load-more-btn" data-i18n="port_load_more">טען עוד</button>
             </div>
         </div>
     </section>
@@ -442,7 +462,7 @@
         <div class="project-modal-inner">
             <div class="project-modal-header">
                 <h3 id="modal-title"></h3>
-                <button class="modal-close-btn" id="modal-close-btn" aria-label="סגור חלון">&#x2715;</button>
+                <button class="modal-close-btn" id="modal-close-btn" data-i18n-aria="aria-label:modal_close" aria-label="סגור חלון">&#x2715;</button>
             </div>
             <div class="project-modal-body">
                 <div class="modal-images-grid" id="modal-images"></div>
@@ -456,10 +476,10 @@
     <!-- Image Lightbox -->
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="תצוגה מוגדלת">
         <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
-        <button class="lightbox-close" id="lightbox-close" aria-label="סגור">&#x2715;</button>
-        <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="תמונה קודמת">&#8250;</button>
+        <button class="lightbox-close" id="lightbox-close" data-i18n-aria="aria-label:lightbox_close" aria-label="סגור">&#x2715;</button>
+        <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" data-i18n-aria="aria-label:lightbox_prev" aria-label="תמונה קודמת">&#8250;</button>
         <img id="lightbox-img" src="" alt="" class="lightbox-img">
-        <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="תמונה הבאה">&#8249;</button>
+        <button class="lightbox-arrow lightbox-next" id="lightbox-next" data-i18n-aria="aria-label:lightbox_next" aria-label="תמונה הבאה">&#8249;</button>
         <div class="lightbox-counter" id="lightbox-counter"></div>
     </div>
 
@@ -468,9 +488,9 @@
         <div class="container">
             <div class="contact-content">
                 <div class="section-header">
-                    <span class="section-label light">בואו נדבר</span>
-                    <h2 class="section-title light">צרו קשר</h2>
-                    <p class="section-subtitle light">מענה מיידי · ליווי אישי · מחיר הוגן</p>
+                    <span class="section-label light" data-i18n="con_label">בואו נדבר</span>
+                    <h2 class="section-title light" data-i18n="con_title">צרו קשר</h2>
+                    <p class="section-subtitle light" data-i18n="con_subtitle">מענה מיידי · ליווי אישי · מחיר הוגן</p>
                 </div>
                 <div class="contact-methods">
                     <a href="tel:+972523386911" class="contact-card">
@@ -480,7 +500,7 @@
                             </svg>
                         </div>
                         <div class="contact-text">
-                            <span class="contact-label">שני אקוקה</span>
+                            <span class="contact-label" data-i18n="con_shai">שני אקוקה</span>
                             <span class="contact-value" dir="ltr">052-338-6911</span>
                         </div>
                     </a>
@@ -491,7 +511,7 @@
                             </svg>
                         </div>
                         <div class="contact-text">
-                            <span class="contact-label">נעמה מור</span>
+                            <span class="contact-label" data-i18n="con_naama">נעמה מור</span>
                             <span class="contact-value" dir="ltr">052-885-4814</span>
                         </div>
                     </a>
@@ -504,8 +524,8 @@
                             </svg>
                         </div>
                         <div class="contact-text">
-                            <span class="contact-label">וואטסאפ</span>
-                            <span class="contact-value">שלחו הודעה עכשיו</span>
+                            <span class="contact-label" data-i18n="con_whatsapp">וואטסאפ</span>
+                            <span class="contact-value" data-i18n="con_whatsapp_send">שלחו הודעה עכשיו</span>
                         </div>
                     </a>
                     <a href="mailto:shine.measur@gmail.com" class="contact-card">
@@ -516,7 +536,7 @@
                             </svg>
                         </div>
                         <div class="contact-text">
-                            <span class="contact-label">אימייל</span>
+                            <span class="contact-label" data-i18n="con_email">אימייל</span>
                             <span class="contact-value">shine.measur@gmail.com</span>
                         </div>
                     </a>
@@ -531,7 +551,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <span class="footer-logo">SHINE</span>
-                    <p class="footer-desc">מייצרים פתרונות ויזואלים<br>שירותי מדידה · שרטוט · הדמייה</p>
+                    <p class="footer-desc" data-i18n-html="footer_desc">מייצרים פתרונות ויזואלים<br>שירותי מדידה · שרטוט · הדמייה</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/shine.measur?utm_source=qr" class="social-link" aria-label="עמוד אינסטגרם" target="_blank" rel="noopener noreferrer">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -554,17 +574,17 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h3>ניווט מהיר</h3>
+                    <h3 data-i18n="footer_nav_title">ניווט מהיר</h3>
                     <ul>
-                        <li><a href="#home">דף הבית</a></li>
-                        <li><a href="#services">שירותים</a></li>
-                        <li><a href="#portfolio">פורטפוליו</a></li>
-                        <li><a href="#contact">צור קשר</a></li>
-                        <li><a href="accessibility-statement.html">הצהרת נגישות</a></li>
+                        <li><a href="#home" data-i18n="nav_home">דף הבית</a></li>
+                        <li><a href="#services" data-i18n="nav_services">שירותים</a></li>
+                        <li><a href="#portfolio" data-i18n="nav_portfolio">פורטפוליו</a></li>
+                        <li><a href="#contact" data-i18n="nav_contact">צור קשר</a></li>
+                        <li><a href="accessibility-statement.html" data-i18n="footer_accessibility">הצהרת נגישות</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h3>פרטי קשר</h3>
+                    <h3 data-i18n="footer_contact_title">פרטי קשר</h3>
                     <p>
                         <a href="tel:+972523386911" dir="ltr">052-338-6911</a>
                     </p>
@@ -572,16 +592,18 @@
                         <a href="mailto:shine.measur@gmail.com">shine.measur@gmail.com</a>
                     </p>
                     <p>
-                        <a href="https://wa.me/972523386911" target="_blank" rel="noopener noreferrer">וואטסאפ</a>
+                        <a href="https://wa.me/972523386911" target="_blank" rel="noopener noreferrer" data-i18n="footer_whatsapp">וואטסאפ</a>
                     </p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 SHINE · כל הזכויות שמורות</p>
+                <p data-i18n="footer_copyright">&copy; 2026 SHINE · כל הזכויות שמורות</p>
             </div>
         </div>
     </footer>
 
+    <script src="i18n/translations.js"></script>
+    <script src="i18n/i18n.js"></script>
     <script src="script.js"></script>
 
 </body>
