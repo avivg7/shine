@@ -362,11 +362,15 @@ function openProject(id) {
     const project = PROJECTS[id];
     if (!project) return;
 
-    document.getElementById('modal-title').textContent = project.title;
+    const lang = window._shineLang || 'he';
+    const T = window.TRANSLATIONS;
+    const title = (T && T[lang] && T[lang]['proj_' + id]) ? T[lang]['proj_' + id] : project.title;
+
+    document.getElementById('modal-title').textContent = title;
 
     const imagesEl = document.getElementById('modal-images');
     imagesEl.innerHTML = project.images
-        .map((src, i) => `<img src="${src}" alt="${project.title}" class="modal-img" loading="lazy" data-index="${i}" tabindex="0">`)
+        .map((src, i) => `<img src="${src}" alt="${title}" class="modal-img" loading="lazy" data-index="${i}" tabindex="0">`)
         .join('');
 
     const videoWrap = document.querySelector('.modal-video-wrap');
